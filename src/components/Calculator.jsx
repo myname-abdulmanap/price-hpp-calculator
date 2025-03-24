@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
+import ThemeToggle from "./DarkMode";
 
 function Calculator() {
   const [items, setItems] = useState([]);
@@ -22,11 +22,6 @@ function Calculator() {
     
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
-
-  // Toggle theme when button is clicked
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
 
   // Apply theme class to document body
   useEffect(() => {
@@ -56,15 +51,7 @@ function Calculator() {
 
   return (
     <div className={`container ${darkMode ? 'dark-theme' : 'light-theme'}`}>
-      <div className="theme-toggle">
-        <button 
-          onClick={toggleTheme} 
-          className="theme-button"
-          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-      </div>
+      <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <h2>Kalkulator HPP</h2>
 
@@ -77,8 +64,6 @@ function Calculator() {
           value={newItem.name}
           onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
         />
-        <br />
-        <br />
         
         <label>Harga Bahan Baku</label>
         <input
