@@ -77,6 +77,8 @@ function Calculator() {
           value={newItem.name}
           onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
         />
+        <br />
+        <br />
         
         <label>Harga Bahan Baku</label>
         <input

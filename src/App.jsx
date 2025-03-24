@@ -1,5 +1,5 @@
 
-import Calculator from './components/TempCalculator';
+import Calculator from './components/Calculator';
 import './index.css';
 
 
