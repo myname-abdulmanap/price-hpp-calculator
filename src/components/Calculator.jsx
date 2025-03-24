@@ -64,18 +64,24 @@ function Calculator() {
           value={newItem.name}
           onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
         />
+        <br />
+        <br />
         
         <label>Harga Bahan Baku</label>
+        
         <input
           type="number"
           placeholder="Harga (Rp)"
           value={newItem.price}
           onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
         />
+    
         <button onClick={addItem} className="add-button">
           Tambah
         </button>
       </div>
+
+      
 
       {/* Tabel daftar bahan */}
       {items.length > 0 && (
