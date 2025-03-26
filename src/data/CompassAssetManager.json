@@ -1,0 +1,30 @@
+{
+  "CompassAssetManager": {
+    "Subscriptions": [
+      {
+        "name": "Set-up Fee per Customer",
+        "id": "555279001",
+        "price": 136800000,
+        "description": "One-time cost, excluding travel expenses"
+      },
+      {
+        "name": "Annual Subscription Fee (ProNote)",
+        "id": "290001343",
+        "price": 1108000,
+        "description": "Annual subscription fee per ProNote, BPS C1/C2"
+      },
+      {
+        "name": "Annual Subscription Fee (BPS C2)",
+        "id": "290001344",
+        "price": 1478000,
+        "description": "Annual subscription fee per BPS C2"
+      },
+      {
+        "name": "Annual Subscription Fee (BPS C5)",
+        "id": "290001345",
+        "price": 13851000,
+        "description": "Annual subscription fee per BPS C5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "Jabodetabek": {
+    "baseRate": 20000,
+    "multiplier": 1.0
+  },
+  "Jawa Barat": {
+    "baseRate": 35000,
+    "multiplier": 1.5
+  },
+  "Jawa Tengah": {
+    "baseRate": 50000,
+    "multiplier": 2.0
+  },
+  "Jawa Timur": {
+    "baseRate": 50000,
+    "multiplier": 2.0
+  },
+  "Bali": {
+    "baseRate": 75000,
+    "multiplier": 2.5
+  },
+  "Sumatera": {
+    "baseRate": 100000,
+    "multiplier": 3.0
+  },
+  "Kalimantan": {
+    "baseRate": 125000,
+    "multiplier": 3.5
+  },
+  "Sulawesi": {
+    "baseRate": 150000,
+    "multiplier": 4.0
+  },
+  "Papua dan Maluku": {
+    "baseRate": 200000,
+    "multiplier": 5.0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "DKI Jakarta": [
+    {"name": "Jakarta Pusat", "region": "Jabodetabek"},
+    {"name": "Jakarta Selatan", "region": "Jabodetabek"},
+    {"name": "Jakarta Utara", "region": "Jabodetabek"},
+    {"name": "Jakarta Barat", "region": "Jabodetabek"},
+    {"name": "Jakarta Timur", "region": "Jabodetabek"}
+  ],
+  "Jawa Barat": [
+    {"name": "Bandung", "region": "Jawa"},
+    {"name": "Bogor", "region": "Jawa"},
+    {"name": "Depok", "region": "Jawa"},
+    {"name": "Bekasi", "region": "Jawa"},
+    {"name": "Tasikmalaya", "region": "Jawa"}
+  ],
+  "Jawa Tengah": [
+    {"name": "Semarang", "region": "Jawa"},
+    {"name": "Solo", "region": "Jawa"},
+    {"name": "Pekalongan", "region": "Jawa"},
+    {"name": "Tegal", "region": "Jawa"}
+  ],
+  "Jawa Timur": [
+    {"name": "Surabaya", "region": "Jawa"},
+    {"name": "Malang", "region": "Jawa"},
+    {"name": "Sidoarjo", "region": "Jawa"},
+    {"name": "Kediri", "region": "Jawa"}
+  ],
+  "Bali": [
+    {"name": "Denpasar", "region": "Luar Jawa"},
+    {"name": "Badung", "region": "Luar Jawa"},
+    {"name": "Gianyar", "region": "Luar Jawa"}
+  ],
+  "Sumatera Utara": [
+    {"name": "Medan", "region": "Luar Jawa"},
+    {"name": "Binjai", "region": "Luar Jawa"},
+    {"name": "Tebing Tinggi", "region": "Luar Jawa"}
+  ]
+}

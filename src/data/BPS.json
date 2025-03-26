@@ -1,0 +1,166 @@
+{
+  "BPS": {
+    "C1": {
+      "Models": [
+        {
+          "name": "BPS C1 - 5 currencies",
+          "id": "523872001",
+          "price": 25666000,
+          "description": "Version with 5 currencies including Fitness Sorting and SNR"
+        },
+        {
+          "name": "BPS C1 - 10 currencies",
+          "id": "523873001",
+          "price": 28571000,
+          "description": "Version with 10 currencies including Fitness Sorting and SNR"
+        },
+        {
+          "name": "BPS C1 - 5 currencies (alternative)",
+          "id": "547535001",
+          "price": 32494000,
+          "description": "Version with 5 currencies including Fitness Sorting and SNR"
+        },
+        {
+          "name": "BPS C1 - 10 currencies (alternative)",
+          "id": "547534001",
+          "price": 35399000,
+          "description": "Version with 10 currencies including Fitness Sorting and SNR"
+        },
+        {
+          "name": "BPS C1 - 32 currencies",
+          "id": "547533001",
+          "price": 46519000,
+          "description": "Version with 32 currencies including Fitness Sorting, SNR and Ticket reading"
+        }
+      ]
+    },
+    "C2": {
+      "Models": [
+        {
+          "name": "BPS C2-2",
+          "id": "554926001",
+          "price": 68400000,
+          "description": "Two output compartments (2+1)"
+        },
+        {
+          "name": "BPS C2-3",
+          "id": "554927001",
+          "price": 83790000,
+          "description": "Three output compartments (3+1)"
+        },
+        {
+          "name": "BPS C2-4",
+          "id": "554928001",
+          "price": 107730000,
+          "description": "Four output compartments (4+1)"
+        }
+      ]
+    },
+    "C5": {
+      "Models": [
+        {
+          "name": "BPS C5-5",
+          "id": "538434001",
+          "price": 188100000,
+          "description": "Input module with 5 output stackers"
+        },
+        {
+          "name": "BPS C5-9",
+          "id": "538434001",
+          "price": 273600000,
+          "description": "Input module with 9 output stackers (5 + 4)"
+        },
+        {
+          "name": "BPS C5-13",
+          "id": "538434001",
+          "price": 359100000,
+          "description": "Input module with 13 output stackers (5 + 4 + 4)"
+        },
+        {
+          "name": "BPS C5-17",
+          "id": null,
+          "price": null,
+          "description": "Input module with 17 output stackers (5 + 4 + 4 + 4), price on request"
+        },
+        {
+          "name": "BPS C5-21",
+          "id": null,
+          "price": null,
+          "description": "Input module with 21 output stackers (5 + 4 + 4 + 4 +4), price on request"
+        },
+        {
+          "name": "BPS C5-25",
+          "id": null,
+          "price": null,
+          "description": "Input module with 25 output stackers (5 + 4 + 4 + 4 + 4 + 4), price on request"
+        }
+      ]
+    },
+    "C6": {
+      "Models": [
+        {
+          "name": "BPS C6-4",
+          "id": "539471001",
+          "price": 253090000,
+          "description": "BPS C6 with 4 output stackers, including one pre-defined currency adaptation"
+        },
+        {
+          "name": "BPS C6-8",
+          "id": "527671011",
+          "price": 359140000,
+          "description": "BPS C6 with 8 output stackers, including one pre-defined currency adaptation"
+        }
+      ]
+    },
+    "Printers": [
+      {
+        "name": "Thermal Printer 3 inch",
+        "id": "524104001",
+        "price": 3415000,
+        "description": "80 mm, speed 250mm/sec, USB 2.0"
+      }
+    ],
+    "ExternalDisplays": [
+      {
+        "name": "External Display PD 7000",
+        "id": "527732001",
+        "price": 3160000,
+        "description": "TFT 7\" LCD monitor, 20 characters by 3 lines, USB 2.0"
+      }
+    ],
+    "MultiCurrencyLicenses": [
+      {
+        "name": "2 Currencies License",
+        "id": "529415000",
+        "price": 10602000,
+        "description": "License for processing 2 currencies"
+      },
+      {
+        "name": "3 Currencies License",
+        "id": "529417000",
+        "price": 13338000,
+        "description": "License for processing 3 currencies"
+      },
+      {
+        "name": "4 Currencies License",
+        "id": "534481000",
+        "price": 16074000,
+        "description": "License for processing 4 currencies"
+      }
+    ],
+    "AdditionalOptions": [
+      {
+        "name": "Mixed Currency Processing (up to 10 currencies)",
+        "id": "552650000",
+        "price": 8550000,
+        "description": "Additional fee for Mixed currency processing up to 10 currencies"
+      },
+      {
+        "name": "Video Surveillance Interface",
+        "id": "518204001",
+        "price": 1710000,
+        "description": "XML report to connect processing data with video stream"
+      }
+    ]
+  }
+}

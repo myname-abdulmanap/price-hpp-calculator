@@ -1,0 +1,67 @@
+{
+  "ProNote": {
+    "Models": [
+      {
+        "name": "ProNote 1.5",
+        "id": "527515031",
+        "price": 15571000,
+        "description": "Counting, sorting and authentication, incl. Adaptation package No. 3 - South East Asia"
+      },
+      {
+        "name": "ProNote 1.5F",
+        "id": "527520011", 
+        "price": 19994000,
+        "description": "Counting, sorting, counterfeit detection, fitness checking"
+      }
+    ],
+    "ExternalDisplays": [
+      {
+        "name": "1-row external LED Display",
+        "id": "526669000",
+        "price": 376000,
+        "description": "For pieces only"
+      },
+      {
+        "name": "One-sided external LED Display",
+        "id": "538611001",
+        "price": 735000,
+        "description": "3 lines (4+4+8 digits), red light"
+      },
+      {
+        "name": "Two-sided external LED Display",
+        "id": "533163011",
+        "price": 1029000,
+        "description": "Side A: 3 lines (4+4+8 digits); Side B: 2 lines (4+4+8 digits), red light"
+      }
+    ],
+    "Printers": [
+      {
+        "name": "Thermal Printer for ProNote",
+        "id": "527600011",
+        "price": 1235000,
+        "description": "External thermal printer for ProNote 300/330/1.5/1.5F"
+      }
+    ],
+    "AdditionalOptions": [
+      {
+        "name": "Additional Currency Adaptation",
+        "id": "285651001",
+        "price": 581000,
+        "description": "Additional currency available adaptation; price per currency"
+      },
+      {
+        "name": "Ticket Reading",
+        "id": "285653001",
+        "price": 5814000,
+        "description": "Reads casino available ticket formats and sends data to connected PC"
+      },
+      {
+        "name": "Cheque Reading",
+        "id": "546087001",
+        "price": 5814000,
+        "description": "Reads available cheque formats and sends data to connected PC"
+      }
+    ]
+  }
+}
+
