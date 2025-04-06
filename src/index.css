@@ -275,6 +275,30 @@ button:focus-visible {
   .table-container {
     grid-column: span 1;
   }
+
+  .sticky-results {
+    padding: 5px 10px;
+  }
+
+  .sticky-results .results-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .result-label {
+    font-size: 14px;
+  }
+
+  .result-value {
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
 table {
@@ -331,6 +355,30 @@ tr:hover {
   
   .results-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sticky-results {
+    padding: 5px 10px;
+  }
+
+  .sticky-results .results-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .result-label {
+    font-size: 14px;
+  }
+
+  .result-value {
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 
@@ -436,6 +484,30 @@ tr:hover {
   .selection-column, .cost-column, .table-container, .results {
     padding: 15px;
   }
+
+  .sticky-results {
+    padding: 5px 10px;
+  }
+
+  .sticky-results .results-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .result-label {
+    font-size: 14px;
+  }
+
+  .result-value {
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
 /* Additional mobile optimizations */
@@ -491,6 +563,30 @@ tr:hover {
   .result-value {
     font-size: 1.2rem;
   }
+
+  .sticky-results {
+    padding: 5px 10px;
+  }
+
+  .sticky-results .results-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .result-label {
+    font-size: 14px;
+  }
+
+  .result-value {
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
 /* Additional small screens optimization */
@@ -511,6 +607,29 @@ tr:hover {
   
   .input-group {
     margin-bottom: 10px;
+  }
+  .sticky-results {
+    padding: 5px 10px;
+  }
+
+  .sticky-results .results-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .result-label {
+    font-size: 14px;
+  }
+
+  .result-value {
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 
@@ -586,7 +705,7 @@ tr:hover {
   }
 
   .sticky-results .results-grid {
-    grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
