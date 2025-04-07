@@ -1,38 +1,380 @@
 {
-  "Jabodetabek": {
-    "baseRate": 20000,
-    "multiplier": 1.0
-  },
-  "Jawa Barat": {
-    "baseRate": 35000,
-    "multiplier": 1.5
-  },
-  "Jawa Tengah": {
-    "baseRate": 50000,
-    "multiplier": 2.0
-  },
-  "Jawa Timur": {
-    "baseRate": 50000,
-    "multiplier": 2.0
-  },
-  "Bali": {
-    "baseRate": 75000,
-    "multiplier": 2.5
-  },
-  "Sumatera": {
-    "baseRate": 100000,
-    "multiplier": 3.0
-  },
-  "Kalimantan": {
-    "baseRate": 125000,
-    "multiplier": 3.5
-  },
-  "Sulawesi": {
-    "baseRate": 150000,
-    "multiplier": 4.0
-  },
-  "Papua dan Maluku": {
-    "baseRate": 200000,
-    "multiplier": 5.0
+  "shippingRates": {
+    "regionRates": {
+      "Jabodetabek": {
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Jawa": {
+        "baseRate": 35000,
+        "multiplier": 1.5
+      },
+      "Luar Jawa": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      }
+    },
+    "provinceRates": {
+      "DKI Jakarta": {
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Jawa Barat": {
+        "baseRate": 35000,
+        "multiplier": 1.5
+      },
+      "Jawa Tengah": {
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "DIY Yogyakarta": {
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "Jawa Timur": {
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "Banten": {
+        "baseRate": 35000,
+        "multiplier": 1.5
+      },
+      "Bali": {
+        "baseRate": 75000,
+        "multiplier": 2.5
+      },
+      "Aceh": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Sumatera Utara": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Sumatera Barat": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Riau": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Kepulauan Riau": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Jambi": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Sumatera Selatan": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Bangka Belitung": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Bengkulu": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Lampung": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Kalimantan Barat": {
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Kalimantan Tengah": {
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Kalimantan Selatan": {
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Kalimantan Timur": {
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Kalimantan Utara": {
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Sulawesi Utara": {
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Gorontalo": {
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Sulawesi Tengah": {
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Sulawesi Barat": {
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Sulawesi Selatan": {
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Sulawesi Tenggara": {
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Maluku": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Maluku Utara": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Papua": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Papua Barat": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Papua Selatan": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Papua Tengah": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Papua Pegunungan": {
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Nusa Tenggara Barat": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Nusa Tenggara Timur": {
+        "baseRate": 100000,
+        "multiplier": 3.0
+      }
+    },
+    "cityRates": {
+      "Jakarta Pusat": {
+        "province": "DKI Jakarta",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Jakarta Utara": {
+        "province": "DKI Jakarta",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Jakarta Selatan": {
+        "province": "DKI Jakarta",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Jakarta Barat": {
+        "province": "DKI Jakarta",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Jakarta Timur": {
+        "province": "DKI Jakarta",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Kepulauan Seribu": {
+        "province": "DKI Jakarta",
+        "region": "Jabodetabek",
+        "baseRate": 25000,
+        "multiplier": 1.2
+      },
+      "Bandung": {
+        "province": "Jawa Barat",
+        "region": "Jawa",
+        "baseRate": 35000,
+        "multiplier": 1.5
+      },
+      "Bekasi": {
+        "province": "Jawa Barat",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Bogor": {
+        "province": "Jawa Barat",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Depok": {
+        "province": "Jawa Barat",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Tangerang": {
+        "province": "Banten",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Tangerang Selatan": {
+        "province": "Banten",
+        "region": "Jabodetabek",
+        "baseRate": 20000,
+        "multiplier": 1.0
+      },
+      "Cirebon": {
+        "province": "Jawa Barat",
+        "region": "Jawa",
+        "baseRate": 40000,
+        "multiplier": 1.7
+      },
+      "Semarang": {
+        "province": "Jawa Tengah",
+        "region": "Jawa",
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "Solo (Surakarta)": {
+        "province": "Jawa Tengah",
+        "region": "Jawa",
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "Yogyakarta": {
+        "province": "DIY Yogyakarta",
+        "region": "Jawa",
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "Surabaya": {
+        "province": "Jawa Timur",
+        "region": "Jawa",
+        "baseRate": 50000,
+        "multiplier": 2.0
+      },
+      "Malang": {
+        "province": "Jawa Timur",
+        "region": "Jawa",
+        "baseRate": 55000,
+        "multiplier": 2.1
+      },
+      "Denpasar": {
+        "province": "Bali",
+        "region": "Luar Jawa",
+        "baseRate": 75000,
+        "multiplier": 2.5
+      },
+      "Medan": {
+        "province": "Sumatera Utara",
+        "region": "Luar Jawa",
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Padang": {
+        "province": "Sumatera Barat",
+        "region": "Luar Jawa",
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Pekanbaru": {
+        "province": "Riau",
+        "region": "Luar Jawa",
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Palembang": {
+        "province": "Sumatera Selatan",
+        "region": "Luar Jawa",
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Bandar Lampung": {
+        "province": "Lampung",
+        "region": "Luar Jawa",
+        "baseRate": 95000,
+        "multiplier": 2.9
+      },
+      "Pontianak": {
+        "province": "Kalimantan Barat",
+        "region": "Luar Jawa",
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Balikpapan": {
+        "province": "Kalimantan Timur",
+        "region": "Luar Jawa",
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Samarinda": {
+        "province": "Kalimantan Timur",
+        "region": "Luar Jawa",
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Banjarmasin": {
+        "province": "Kalimantan Selatan",
+        "region": "Luar Jawa",
+        "baseRate": 125000,
+        "multiplier": 3.5
+      },
+      "Makassar": {
+        "province": "Sulawesi Selatan",
+        "region": "Luar Jawa",
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Manado": {
+        "province": "Sulawesi Utara",
+        "region": "Luar Jawa",
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Palu": {
+        "province": "Sulawesi Tengah",
+        "region": "Luar Jawa",
+        "baseRate": 150000,
+        "multiplier": 4.0
+      },
+      "Ambon": {
+        "province": "Maluku",
+        "region": "Luar Jawa",
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Jayapura": {
+        "province": "Papua",
+        "region": "Luar Jawa",
+        "baseRate": 200000,
+        "multiplier": 5.0
+      },
+      "Mataram": {
+        "province": "Nusa Tenggara Barat",
+        "region": "Luar Jawa",
+        "baseRate": 100000,
+        "multiplier": 3.0
+      },
+      "Kupang": {
+        "province": "Nusa Tenggara Timur",
+        "region": "Luar Jawa",
+        "baseRate": 110000,
+        "multiplier": 3.2
+      }
+    }
   }
 }
