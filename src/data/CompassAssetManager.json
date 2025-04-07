@@ -2,29 +2,36 @@
   "CompassAssetManager": {
     "Subscriptions": [
       {
-        "name": "Set-up Fee per Customer",
+        "name": "Set-up Fee per Customer (Starter)",
         "id": "555279001",
         "price": 136800000,
         "description": "One-time cost, excluding travel expenses"
       },
       {
-        "name": "Annual Subscription Fee (ProNote)",
+        "name": "Annual Subscription Fee - Starter (ProNote/BPS C1/C2)",
         "id": "290001343",
         "price": 1108000,
         "description": "Annual subscription fee per ProNote, BPS C1/C2"
       },
       {
-        "name": "Annual Subscription Fee (BPS C2)",
+        "name": "Set-up Fee per Customer (Premium)",
+        "id": "555279001",
+        "price": 136800000,
+        "description": "One-time cost, excluding travel expenses"
+      },
+      {
+        "name": "Annual Subscription Fee - Premium (BPS C2)",
         "id": "290001344",
         "price": 1478000,
         "description": "Annual subscription fee per BPS C2"
       },
       {
-        "name": "Annual Subscription Fee (BPS C5)",
+        "name": "Annual Subscription Fee - Premium (BPS C5)",
         "id": "290001345",
         "price": 13851000,
         "description": "Annual subscription fee per BPS C5"
       }
-    ]
+    ],
+    "Note": "The Compass Asset Manager is currently available for the ProNote 300, 330, 1.5, 1.5F and 1.5F Lnx. For C1, C1s, C2 and C5 please clarify availability with the Channel Partner Manager upfront before offering to customers."
   }
 }

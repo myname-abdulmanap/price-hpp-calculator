@@ -4,42 +4,42 @@
       {
         "id": "PN-1500",
         "name": "ProNote 1.5",
-        "price": 15000000,
-        "description": "ProNote 1.5 Basic Model with standard configuration"
+        "price": 15571000,
+        "description": "Counting, sorting and authentication incl. Adaptation package No. 3 - South East Asia"
       },
       {
         "id": "PN-1500F",
         "name": "ProNote 1.5F",
-        "price": 17500000,
-        "description": "ProNote 1.5F Enhanced Model with faster processing capabilities"
+        "price": 19994000,
+        "description": "Counting, sorting, counterfeit detection, fitness checking incl. Adaptation package No. 3 - South East Asia"
       }
     ],
     "ExternalDisplays": [
       {
         "id": "ED-101",
-        "name": "External Display 10-inch",
-        "price": 2500000,
-        "description": "10-inch external display for ProNote series"
+        "name": "1-row external LED Display for pieces only",
+        "price": 376000,
+        "description": "External LED display showing piece count only"
       },
       {
-        "id": "ED-150",
-        "name": "External Display 15-inch",
-        "price": 3500000,
-        "description": "15-inch external display for ProNote series"
+        "id": "ED-103",
+        "name": "One-sided external LED Display",
+        "price": 735000,
+        "description": "3 lines (4+4+8 digits), red light"
+      },
+      {
+        "id": "ED-203",
+        "name": "Two-sided external LED Display",
+        "price": 1029000,
+        "description": "side A: 3 lines (4+4+8 digits); side B: 2 lines (4+4+8 digits), red light"
       }
     ],
     "Printers": [
       {
-        "id": "TP-201",
-        "name": "Thermal Printer Standard",
-        "price": 1200000,
-        "description": "Standard thermal printer for ProNote series"
-      },
-      {
-        "id": "TP-301",
-        "name": "Thermal Printer Premium",
-        "price": 1800000,
-        "description": "Premium thermal printer with higher speed for ProNote series"
+        "id": "TP-100",
+        "name": "Thermal printer",
+        "price": 1235000,
+        "description": "External thermal printer for ProNote 300/ProNote 330/ProNote 1.5/ProNote 1.5F"
       }
     ]
   }
