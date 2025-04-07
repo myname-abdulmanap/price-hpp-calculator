@@ -1,38 +1,162 @@
 {
   "DKI Jakarta": [
-    {"name": "Jakarta Pusat", "region": "Jabodetabek"},
-    {"name": "Jakarta Selatan", "region": "Jabodetabek"},
-    {"name": "Jakarta Utara", "region": "Jabodetabek"},
-    {"name": "Jakarta Barat", "region": "Jabodetabek"},
-    {"name": "Jakarta Timur", "region": "Jabodetabek"}
+    {
+      "name": "Jakarta Pusat",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Jakarta Utara",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Jakarta Selatan",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Jakarta Barat",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Jakarta Timur",
+      "region": "Jabodetabek"
+    }
   ],
   "Jawa Barat": [
-    {"name": "Bandung", "region": "Jawa"},
-    {"name": "Bogor", "region": "Jawa"},
-    {"name": "Depok", "region": "Jawa"},
-    {"name": "Bekasi", "region": "Jawa"},
-    {"name": "Tasikmalaya", "region": "Jawa"}
+    {
+      "name": "Bandung",
+      "region": "Jawa"
+    },
+    {
+      "name": "Bekasi",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Bogor",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Depok",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Cirebon",
+      "region": "Jawa"
+    },
+    {
+      "name": "Tasikmalaya",
+      "region": "Jawa"
+    }
   ],
   "Jawa Tengah": [
-    {"name": "Semarang", "region": "Jawa"},
-    {"name": "Solo", "region": "Jawa"},
-    {"name": "Pekalongan", "region": "Jawa"},
-    {"name": "Tegal", "region": "Jawa"}
+    {
+      "name": "Semarang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Solo",
+      "region": "Jawa"
+    },
+    {
+      "name": "Tegal",
+      "region": "Jawa"
+    },
+    {
+      "name": "Magelang",
+      "region": "Jawa"
+    }
   ],
   "Jawa Timur": [
-    {"name": "Surabaya", "region": "Jawa"},
-    {"name": "Malang", "region": "Jawa"},
-    {"name": "Sidoarjo", "region": "Jawa"},
-    {"name": "Kediri", "region": "Jawa"}
+    {
+      "name": "Surabaya",
+      "region": "Jawa"
+    },
+    {
+      "name": "Malang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Sidoarjo",
+      "region": "Jawa"
+    },
+    {
+      "name": "Kediri",
+      "region": "Jawa"
+    }
+  ],
+  "Banten": [
+    {
+      "name": "Tangerang",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Tangerang Selatan",
+      "region": "Jabodetabek"
+    },
+    {
+      "name": "Serang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Cilegon",
+      "region": "Jawa"
+    }
   ],
   "Bali": [
-    {"name": "Denpasar", "region": "Luar Jawa"},
-    {"name": "Badung", "region": "Luar Jawa"},
-    {"name": "Gianyar", "region": "Luar Jawa"}
+    {
+      "name": "Denpasar",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Badung",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Gianyar",
+      "region": "Luar Jawa"
+    }
   ],
   "Sumatera Utara": [
-    {"name": "Medan", "region": "Luar Jawa"},
-    {"name": "Binjai", "region": "Luar Jawa"},
-    {"name": "Tebing Tinggi", "region": "Luar Jawa"}
+    {
+      "name": "Medan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Binjai",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Pematangsiantar",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sumatera Selatan": [
+    {
+      "name": "Palembang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Prabumulih",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sulawesi Selatan": [
+    {
+      "name": "Makassar",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Parepare",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kalimantan Timur": [
+    {
+      "name": "Samarinda",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Balikpapan",
+      "region": "Luar Jawa"
+    }
   ]
 }

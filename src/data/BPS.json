@@ -1,484 +1,518 @@
 {
   "BPS": {
-    "C1": {
-      "Models": [
+    "BPSC1": {
+      "items": [
         {
-          "name": "BPS C1 - 5 currencies",
-          "id": "523872001",
-          "price": 25666000,
-          "description": "Version with 5 currencies including Fitness Sorting and SNR"
+          "category": "System Configurations",
+          "products": [
+            {
+              "materialNumber": "BPS-C1-001",
+              "name": "BPS C1",
+              "description": "BPS C1 Base Model",
+              "price": 22000000
+            },
+            {
+              "materialNumber": "BPS-C1S-001",
+              "name": "BPS C1s",
+              "description": "BPS C1s Compact Model",
+              "price": 18000000
+            }
+          ]
         },
         {
-          "name": "BPS C1 - 10 currencies",
-          "id": "523873001",
-          "price": 28571000,
-          "description": "Version with 10 currencies including Fitness Sorting and SNR"
+          "category": "Hardware Options",
+          "products": [
+            {
+              "materialNumber": "HW-ED-101",
+              "name": "External display",
+              "description": "External Display for BPS C1 series",
+              "price": 2500000
+            },
+            {
+              "materialNumber": "HW-TP-101",
+              "name": "Thermal printer",
+              "description": "Thermal Printer for BPS C1 series",
+              "price": 1200000
+            },
+            {
+              "materialNumber": "HW-BR-101",
+              "name": "Barcode reader",
+              "description": "Barcode Reader for BPS C1 series",
+              "price": 1500000
+            },
+            {
+              "materialNumber": "HW-UPS-101",
+              "name": "UPS",
+              "description": "UPS for BPS C1 series",
+              "price": 2000000
+            },
+            {
+              "materialNumber": "HW-ARM-101",
+              "name": "GUI arm",
+              "description": "GUI Arm for BPS C1 series",
+              "price": 1800000
+            },
+            {
+              "materialNumber": "HW-STD-101",
+              "name": "Stand",
+              "description": "Stand for BPS C1 series",
+              "price": 1000000
+            },
+            {
+              "materialNumber": "HW-TFL-101",
+              "name": "Traffic light",
+              "description": "Traffic Light for BPS C1 series",
+              "price": 800000
+            }
+          ]
         },
         {
-          "name": "BPS C1s - 5 currencies (alternative)",
-          "id": "547535001",
-          "price": 32494000,
-          "description": "Version with 5 currencies including Fitness Sorting and SNR"
+          "category": "Software Options",
+          "products": [
+            {
+              "materialNumber": "SW-CA-101",
+              "name": "Currency Adaptation",
+              "description": "Currency Adaptation for BPS C1 series",
+              "price": 5000000
+            },
+            {
+              "materialNumber": "SW-SN-101",
+              "name": "Serial number reading",
+              "description": "Serial Number Reading for BPS C1 series",
+              "price": 3500000
+            },
+            {
+              "materialNumber": "SW-TR-101",
+              "name": "Ticket reading",
+              "description": "Ticket Reading for BPS C1 series",
+              "price": 4000000
+            },
+            {
+              "materialNumber": "SW-FDP-101",
+              "name": "Fast Deposit Processing",
+              "description": "Fast Deposit Processing for BPS C1 series",
+              "price": 6000000
+            },
+            {
+              "materialNumber": "SW-VID-101",
+              "name": "Video surveillance interface",
+              "description": "Video Surveillance Interface for BPS C1 series",
+              "price": 4500000
+            }
+          ]
         },
         {
-          "name": "BPS C1s - 10 currencies (alternative)",
-          "id": "547534001",
-          "price": 35399000,
-          "description": "Version with 10 currencies including Fitness Sorting and SNR"
-        },
-        {
-          "name": "BPS C1s - 32 currencies",
-          "id": "547533001",
-          "price": 46519000,
-          "description": "Version with 32 currencies including Fitness Sorting, SNR and Ticket reading"
-        },
-        {
-          "name": "Additional Currency",
-          "id": "285651001",
-          "price":  581000,
-          "description": "available adaptation; price per currency"
-        },
-
-        {
-          "name": "Ticket Reading *",
-          "id": "285653001",
-          "price":  5814000,
-          "description": "Reads casino available ticket formats and sends data to connected PC (PC not part of delivery)"
-        },
-        {
-          "name": "Cheque Reading *",
-          "id": "546087001",
-          "price":  5814000,
-          "description": "Reads available cheque formats and sends data to connected PC (PC not part of delivery)"
-        },
-        {
-          "name": "External Display 2 Rows Red LED",
-          "id": "283633001",
-          "price":  684000,
-          "description": "Shows counting results to the customer through the teller window (2 rows, red LED)"
-        },
-        {
-          "name": "External Display 3 Rows Green LED Stand",
-          "id": "525197001",
-          "price":  2052000,
-          "description": "Shows counting results to the customer through the teller window (3 rows, green LED, stand)"
-        },
-        {
-          "name": "High speed thermal printer",
-          "id": "283632001",
-          "price":  4104000,
-          "description": "Print out of serial no. Images and OCR as well as ticket barcode reading 2"
-        },
-        {
-          "name": "License Key Creation",
-          "id": "505235001",
-          "price":  3420000,
-          "description": "In case a license key is required for change or addition of features and/or currencies"
-        }
-
-      ]
-    },
-    "C2": {
-      "Models": [
-        {
-          "name": "BPS C2-2",
-          "id": "554926001",
-          "price": 68400000,
-          "description": "Two output compartments (2+1)"
-        },
-        {
-          "name": "BPS C2-3",
-          "id": "554927001",
-          "price": 83790000,
-          "description": "Three output compartments (3+1)"
-        },
-        {
-          "name": "BPS C2-4",
-          "id": "554928001",
-          "price": 107730000,
-          "description": "Four output compartments (4+1)"
-        },
-
-        {
-          "name": "External Display (Model: PD 7000)",
-          "id": "527732001",
-          "price": 3160000,
-          "description": "Model: PD 7000, TFT 7 LCD monitor, 20 characters by 3 lines, USB 2.0" 
-},
-
-        {
-          "name": "10 GUI (Optional 10 display with high resolution GUI, see price in Spare Parts Catalogue)",
-          "id": "552752001",
-          "price": 0,
-          "description": "Optional 10 display with high resolution GUI (from R2.15 onwards)"
-        },
-
-        {
-          "name": "Thermal Printer 2 inch, 58 mm NXN",
-          "id": "524105001",
-          "price":  1703000          ,
-          "description": " 2 inch, 58 mm NXN"
-        },
-        {
-          "name": "Thermal Printer 3 inch, 80 mm, speed 250mm/sec, USB 2.0",
-          "id": "524104001",
-          "price":   3415000          ,
-          "description": " 3 inch, 80 mm, speed 250mm/sec, USB 2.0"
-        },
-
-        {
-          "name": "Barcode Reader",
-          "id": "516604001",
-          "price":  2052000,
-          "description": "Required for FDP processing" 
-        },
-        {
-          "name": "Uninterrupted power supply (UPS), price on request",
-          "id": "528216000",
-          "price": 0,
-          "description": "Required for regions with frequent power failures" 
-        }, 
-        {
-          "name": "GUI Arm (R2.10 to R2.12)",
-          "id": "547679001",
-          "price": 6549000,
-          "description": "The mounting arm allows to attach the GUI to the BPS C2 enclosure(from R2.10 to R2.12)"
-        },
-
-        {
-          "name": "GUI Arm (R2.15 onwards)",
-          "id": "55270900",
-          "price":  6395000,
-          "description": "The mounting kit allows to attach the High resolution GUI to the BPS C2 enclosure (from R2.15 onwards)"
-        },
-        
-        {
-          "name": "Stand",
-          "id": "552708001",
-          "price":  444000,
-          "description": "GUI table stand with flexible angle adjustment (only for high resolution GUI)"
-        },
-        {
-          "name": "Stacker Cover",
-          "id": "531617001",
-          "price": 444000,
-          "description": "One per stacker"
-        },
-        {
-          "name": "Multi currency package 2-5 currencies",
-          "id": "546413001",
-          "price": 5387000,
-          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations."
-        },
-        {
-          "name": "Multi currency package 6-10 currencies",
-          "id": "546414001",
-          "price": 3848000,
-          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed package for 2-5 currencies."
-        },
-        {
-          "name": "Multi currency package 11-30 currencies",
-          "id": "546415001",
-          "price": 15390000,
-          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed packages for 2-5 and 6-10 currencies."
-        },
-        {
-          "name": "Multi currency package > 30 currencies, price on request",
-          "id": "546416001",
-          "price": 0,
-          "description": "Processing of installed currencies in sequence. Only applies to available and released adaptations. Up to 60 currencies are possible, depending on the complexity of the adaptations."
-        },
-        {
-          "name": "Mixed currency processing",
-          "id": "546417001",
-          "price": 4617000,
-          "description": "Processing of up to 10 currencies simultaneously if they are already installed in a multi-currency package. Please note: Every combination needs to be tested upfront."
-        },
-        {
-          "name": "Serial number reading",
-          "id": "518202001",
-          "price": 4617000,
-          "description": "Reads the serial number (SN) of banknotes incl. the possibility to either store it on the system or send the data as well as the image of the SN to a defined IP address or a connected USB stick. The system can also look for a specific SN in a search list which is stored on the machine."
-        },
-        {
-          "name": "Serial number reading, comparison and consolidation (SNR, data export)",
-          "id": "533627001",
-          "price": 9234000,
-          "description": "Reads both serial number (SN) of banknotes (OCR) and compares them. If they are different, i.e. a suspected composed note the banknote will be sent to reject. If both SNs are equal the banknote will be stacked, and data sent to a defined IP address or a connected USB stick. The system can also look for a specific SN in a search list which is stored on the machine."
-        },
-
-        {
-          "name": "Special commercial security features",
-          "id": "533626001",
-          "price": 7695000,
-          "description": "Some banknotes contain special features such as SICPATalk or have been inked by IBNS solutions. Many of such features can be detected, however require additional adaptation effort per currency. This price is only valid for adaptations which have implemented the respective feature."
-        },
-
-        {
-          "name": "Ticket reading",
-          "id": "518203001",
-          "price": 13851000,
-          "description": "Software function to read casino tickets by the sensor system and send data to a defined IP-address. 4 orientations. Mixed processing of tickets and banknotes. Please note: BPS Connect Casino for prepping and reconciliation as well as a PC are not included in this price."
-        },
-
-        {
-          "name": "Fast Deposit Processing (FDP), free of charge",
-          "id": "528368001",
-          "price": 0,
-          "description": "Software function to increase efficiency by 1-step process: The deposit data are entered via barcode reader directly at the system, banknotes are verified and sorted in one run, rejects are processed offline to finally balance the deposit. Please note that a barcode reader is not included in the price and needs to be ordered separately. A license for cash management system is also not included in the price for the FDP option."
-        },
-
-        {
-          "name": "Video surveillance interface and SNTP, free of charge",
-          "id": "518204001",
-          "price": 0,
-          "description": "XML report to connect the processing data of a particular deposit with the video stream of the surveillance supplier."
-        },
-
-        {
-          "name": "BPS Config Optimizer, free of charge",
-          "id": "549040001",
-          "price": 0,
-          "description": "External application for customer PC (Windows) to change operation modes and machine configuration (e.g. reports, stacker capacity)."
+          "category": "Service",
+          "products": [
+            {
+              "materialNumber": "SRV-LK-101",
+              "name": "License key creation",
+              "description": "License Key Creation for BPS C1 series",
+              "price": 500000
+            },
+            {
+              "materialNumber": "SRV-AF-101",
+              "name": "Activation file creation",
+              "description": "Activation File Creation for BPS C1 series",
+              "price": 300000
+            }
+          ]
         }
       ]
     },
-
-    "C5": {
-      "Models": [
+    "BPSC2": {
+      "items": [
         {
-          "name": "BPS C5-5",
-          "id": "538434001-1",
-          "price": 188100000,
-          "description": "Input module with 5 output stackers"
+          "category": "System Configurations",
+          "products": [
+            {
+              "materialNumber": "BPS-C2-2-001",
+              "name": "BPS C2-2",
+              "description": "BPS C2-2 Base Model",
+              "price": 28000000
+            },
+            {
+              "materialNumber": "BPS-C2-3-001",
+              "name": "BPS C2-3",
+              "description": "BPS C2-3 Enhanced Model",
+              "price": 32000000
+            },
+            {
+              "materialNumber": "BPS-C2-4-001",
+              "name": "BPS C2-4",
+              "description": "BPS C2-4 Premium Model",
+              "price": 38000000
+            }
+          ]
         },
         {
-          "name": "BPS C5-9",
-          "id": "5384340013-2",
-          "price": 273600000,
-          "description": "Input module with 9 output stackers (5 + 4)"
+          "category": "Hardware Options",
+          "products": [
+            {
+              "materialNumber": "HW-ED-201",
+              "name": "External display",
+              "description": "External Display for BPS C2 series",
+              "price": 3000000
+            },
+            {
+              "materialNumber": "HW-TP-201",
+              "name": "Thermal printer",
+              "description": "Thermal Printer for BPS C2 series",
+              "price": 1500000
+            },
+            {
+              "materialNumber": "HW-BR-201",
+              "name": "Barcode reader",
+              "description": "Barcode Reader for BPS C2 series",
+              "price": 1800000
+            },
+            {
+              "materialNumber": "HW-UPS-201",
+              "name": "UPS",
+              "description": "UPS for BPS C2 series",
+              "price": 2500000
+            },
+            {
+              "materialNumber": "HW-ARM-201",
+              "name": "GUI arm",
+              "description": "GUI Arm for BPS C2 series",
+              "price": 2000000
+            },
+            {
+              "materialNumber": "HW-STD-201",
+              "name": "Stand",
+              "description": "Stand for BPS C2 series",
+              "price": 1200000
+            },
+            {
+              "materialNumber": "HW-TFL-201",
+              "name": "Traffic light",
+              "description": "Traffic Light for BPS C2 series",
+              "price": 900000
+            }
+          ]
         },
         {
-          "name": "BPS C5-13",
-          "id": "538434001-3",
-          "price": 359100000,
-          "description": "Input module with 13 output stackers (5 + 4 + 4)"
+          "category": "Software Options",
+          "products": [
+            {
+              "materialNumber": "SW-CA-201",
+              "name": "Currency Adaptation",
+              "description": "Currency Adaptation for BPS C2 series",
+              "price": 6000000
+            },
+            {
+              "materialNumber": "SW-SN-201",
+              "name": "Serial number reading",
+              "description": "Serial Number Reading for BPS C2 series",
+              "price": 4000000
+            },
+            {
+              "materialNumber": "SW-TR-201",
+              "name": "Ticket reading",
+              "description": "Ticket Reading for BPS C2 series",
+              "price": 4500000
+            },
+            {
+              "materialNumber": "SW-FDP-201",
+              "name": "Fast Deposit Processing",
+              "description": "Fast Deposit Processing for BPS C2 series",
+              "price": 7000000
+            },
+            {
+              "materialNumber": "SW-VID-201",
+              "name": "Video surveillance interface",
+              "description": "Video Surveillance Interface for BPS C2 series",
+              "price": 5000000
+            }
+          ]
         },
         {
-          "name": "BPS C5-17, price on request",
-          "id": "538434001-4",
-          "price": 0,
-          "description": "Input module with 17 output stackers (5 + 4 + 4 + 4), price on request"
-        },
-        {
-          "name": "BPS C5-21, price on request",
-          "id": "538434001-5",
-          "price": 0,
-          "description": "Input module with 21 output stackers (5 + 4 + 4 + 4 + 4), price on request"
-        },
-        {
-          "name": "BPS C5-25, price on request",
-          "id": "538434001-6",
-          "price": 0,
-          "description": "Input module with 25 output stackers (5 + 4 + 4 + 4 + 4 + 4), price on request"
-        },
-        {
-          "name": "BPS C5-1B, price on request",
-          "id": "538434001-7",
-          "price": 0,
-          "description": "Input module with 1 Bander Delivery Module (BDM), price on request"
-        },
-        {
-          "name": "Standard Delivery Module (SDM)",
-          "id": "524986021",
-          "price": 128250000,
-          "description": "Upgrade of an existing system with an additional SDM (max. 6 modules can be connected to a system in total). One SDM contains 4 stackers for loose banknotes."
-        },
-        {
-          "name": "Bander Delivery Module (BDM)",
-          "id": "536820001",
-          "price": 444600000,
-          "description": "With the BDM, the functionality of online banding can be added to the BPS C5; one BDM is designated to one denomination (2 stackers working in tandem). A BPS C5 can be equipped with up to 6 modules in total (any combination from SDM and BDM)."
-        },
-        {
-          "name": "External display Model: PD 7000",
-          "id": "527732001",
-          "price": 3160000,
-          "description": "TFT 7\" LCD monitor, 20 characters by 3 lines, USB 2.0"
-        },
-        {
-          "name": "7\" GUI",
-          "id": "552710001",
-          "price": 0,
-          "description": "Optional 7\" display with high resolution GUI (from R3.15 onwards), see price in Spare Parts Catalogue"
-        },
-        {
-          "name": "Thermal printer",
-          "id": "524104001",
-          "price": 3415000,
-          "description": "3 inch, 80 mm, speed 250mm/sec, USB 2.0"
-        },
-        {
-          "name": "Barcode reader",
-          "id": "516604001",
-          "price": 2052000,
-          "description": "Required for FDP and HDP processing"
-        },
-        {
-          "name": "Uninterrupted power supply (UPS)",
-          "id": "528216000",
-          "price": 0,
-          "description": "Required for regions with frequent power failures, price on request"
-        },
-        {
-          "name": "Upgrade Spares for BDM - Image sensor PIS 7S, see price in Spare Parts Catalogue",
-          "id": "538606001-1",
-          "price": 0,
-          "description": "Required parts for BPS C5 hardware releases <R3.7, for 220V (up to six modules) as well as 110V (up to two modules), see price in Spare Parts Catalogue"
-        },
-        {
-          "name": "Upgrade Spares for BDM - Image sensor PIS 7S and Panel element INL ASSY, see price in Spare Parts Catalogue",
-          "id": "538606001-2",
-          "price": 0,
-          "description": "Required parts for BPS C5 hardware releases <R3.7 for 110V with more than 2 BDMs, see price in Spare Parts Catalogue"
-        },
-        {
-          "name": "Upgrade Spares for BDM - Panel element INL ASSY",
-          "id": "540895001",
-          "price": 0,
-          "description": "Required parts for BPS C5 hardware releases = R3.7 and 110V with more than 2 BDMs, see price in Spare Parts Catalogue"
-        },
-        {
-          "name": "GUI mounting kit",
-          "id": "548225001",
-          "price": 2035000,
-          "description": "The mounting kit allows to attach the GUI to the BPS C5 enclosure (from R3.10 onwards)"
-        },
-        {
-          "name": "Stand",
-          "id": "552708001",
-          "price": 436000,
-          "description": "GUI table stand with flexible angle adjustment (only for high resolution GUI)"
-        },
-        {
-          "name": "Traffic light",
-          "id": "552462001",
-          "price": 1890000,
-          "description": "Singler status identification (from R3.15 onwards)"
-        },
-        {
-          "name": "Bander output slider",
-          "id": "553637001",
-          "price": 2180000,
-          "description": "Bander output slider will slide the banded packets from bander output"
-        },
-        {
-          "name": "Multi currency package 2-5 currency",
-          "id": "546413001",
-          "price": 5387000,
-          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations."
-        },
-        {
-          "name": "Multi currency package 6-10 currency",
-          "id": "546414001",
-          "price": 3848000,
-          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed package for 2-5 currencies"
-        },
-        {
-          "name": "Multi currency package 11-30 currency",
-          "id": "546415001",
-          "price": 15390000,
-          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed packages for 2-5 and 6-10 currencies"
-        },
-        {
-          "name": "Multi currency package > 30 currencies",
-          "id": "546416001",
-          "price": 0,
-          "description": "Processing of installed currencies in sequence. Only applies to available and released adaptations. Up to 60 currencies are possible, depending on the complexity of the adaptations, price on request"
-        },
-        {
-          "name": "Mixed currency processing",
-          "id": "546417001",
-          "price": 4617000,
-          "description": "Processing of up to 10 currencies simultaneously if they are already installed in a multi-currency package. Please note: Every combination needs to be tested upfront"
-        },
-        {
-          "name": "Serial number reading",
-          "id": "518202001",
-          "price": 4617000,
-          "description": "Reads the serial number (SN) of banknotes incl. the possibility to either store it on the system or send the data as well as the image of the SN to a defined IP address or a connected USB stick. The system can also look for a specific SN in a search list which is stored on the machine."
-        },
-        {
-          "name": "Serial number reading, comparison and consolidation (SNR, data export)",
-          "id": "533627001",
-          "price": 9234000,
-          "description": "Reads both serial number (SN) of banknotes (OCR) and compares them. If they are different, i.e. a suspected composed note the banknote will be sent to reject. If both SNs are equal the banknote will be stacked, and data sent to a defined IP address or a connected USB stick. The system can also look for a specific SN in a search list which is stored on the machine."
-        },
-        {
-          "name": "Special commercial security features",
-          "id": "533626001",
-          "price": 7695000,
-          "description": "Some banknotes contain special features such as SICPATalk or have been inked by IBNS solutions. Many of such features can be detected, however require additional adaptation effort per currency. This price is only valid for adaptations which have implemented the respective feature"
-        },
-        {
-          "name": "Ticket reading",
-          "id": "518203001",
-          "price": 13851000,
-          "description": "Software function to read casino tickets by the sensor system and send data to a defined IP-address. 4 orientations. Mixed processing of tickets and banknotes. Please note: BPS Connect Casino for prepping and reconciliation as well as a PC are not included in this price"
-        },
-        {
-          "name": "Fast Deposit Processing (FDP)",
-          "id": "518201001",
-          "price": 0,
-          "description": "Software function to increase efficiency by 1-step process: The deposit data are entered via barcode-reader directly at the system, banknotes verified and sorted in one run, rejects are processed offline to finally balance the deposit. Free of charge"
-        },
-        {
-          "name": "Headercard Deposit processing (HDP)",
-          "id": "527279001",
-          "price": 92340000,
-          "description": "Software function for increasing productivity by a 1-step process: Header cards and subsequent banknotes are recognized by the BPS C5 sensor; processing data are sent to a vault management SW such as Compass VMS on an external PC. The reject reconciliation is done offline to process continuously and thus maximize throughput at BPS C5."
-        },
-        {
-          "name": "Dynamic sorting",
-          "id": "555259001",
-          "price": 12312000,
-          "description": "Banknotes are sorted dynamically into an available delivery stacker without singler stop: When a stacker is emptied, the sorting criteria for this stacker are reset, and this stacker is immediately available for any subsequent banknote with different sorting criteria. It is also possible to mix dynamic and fix stacker assignments."
-        },
-        {
-          "name": "Video surveillance interface and SNTP, free of charge",
-          "id": "518204001",
-          "price": 0,
-          "description": "XML report to connect the processing data of a particular deposit with the video stream of the surveillance supplier. Free of charge"
-        },
-        {
-          "name": "BPS Config Optimizer, free of charge",
-          "id": "549040001",
-          "price": 0,
-          "description": "External application for customer PC (Windows) to change operation modes and machine configuration (e.g. reports, stacker capacity). Free of charge"
-        },
-        {
-          "name": "Activation file creation",
-          "id": "546165001",
-          "price": 3420000,
-          "description": "In case an activation file creation is required not in combination with a hardware or software order, this service fee will be charged"
+          "category": "Service",
+          "products": [
+            {
+              "materialNumber": "SRV-LK-201",
+              "name": "License key creation",
+              "description": "License Key Creation for BPS C2 series",
+              "price": 600000
+            },
+            {
+              "materialNumber": "SRV-AF-201",
+              "name": "Activation file creation",
+              "description": "Activation File Creation for BPS C2 series",
+              "price": 400000
+            }
+          ]
         }
-
-      ] 
+      ]
     },
-   
-    "C6": {
-      "Models": [
+    "BPSC5": {
+      "items": [
         {
-          "name": "BPS C6-4",
-          "id": "539471001",
-          "price": 253090000,
-          "description": "BPS C6 with 4 output stackers, including one pre-defined currency adaptation"
+          "category": "System Configurations",
+          "products": [
+            {
+              "materialNumber": "BPS-C5-5-001",
+              "name": "BPS C5-5",
+              "description": "BPS C5-5 Base Model",
+              "price": 42000000
+            },
+            {
+              "materialNumber": "BPS-C5-9-001",
+              "name": "BPS C5-9",
+              "description": "BPS C5-9 Enhanced Model",
+              "price": 48000000
+            },
+            {
+              "materialNumber": "BPS-C5-13-001",
+              "name": "BPS C5-13",
+              "description": "BPS C5-13 Pro Model",
+              "price": 54000000
+            },
+            {
+              "materialNumber": "BPS-C5-17-001",
+              "name": "BPS C5-17",
+              "description": "BPS C5-17 Premium Model",
+              "price": 62000000
+            },
+            {
+              "materialNumber": "BPS-C5-21-001",
+              "name": "BPS C5-21",
+              "description": "BPS C5-21 Advanced Model",
+              "price": 68000000
+            },
+            {
+              "materialNumber": "BPS-C5-25-001",
+              "name": "BPS C5-25",
+              "description": "BPS C5-25 Ultimate Model",
+              "price": 75000000
+            },
+            {
+              "materialNumber": "BPS-C5-1B-001",
+              "name": "BPS C5-1B",
+              "description": "BPS C5-1B High-Capacity Model",
+              "price": 85000000
+            }
+          ]
         },
         {
-          "name": "BPS C6-8",
-          "id": "527671011",
-          "price": 359140000,
-          "description": "BPS C6 with 8 output stackers, including one pre-defined currency adaptation"
+          "category": "Hardware Options",
+          "products": [
+            {
+              "materialNumber": "HW-ED-501",
+              "name": "External display",
+              "description": "External Display for BPS C5 series",
+              "price": 3500000
+            },
+            {
+              "materialNumber": "HW-TP-501",
+              "name": "Thermal printer",
+              "description": "Thermal Printer for BPS C5 series",
+              "price": 1800000
+            },
+            {
+              "materialNumber": "HW-BR-501",
+              "name": "Barcode reader",
+              "description": "Barcode Reader for BPS C5 series",
+              "price": 2000000
+            },
+            {
+              "materialNumber": "HW-UPS-501",
+              "name": "UPS",
+              "description": "UPS for BPS C5 series",
+              "price": 3000000
+            },
+            {
+              "materialNumber": "HW-ARM-501",
+              "name": "GUI arm",
+              "description": "GUI Arm for BPS C5 series",
+              "price": 2200000
+            },
+            {
+              "materialNumber": "HW-STD-501",
+              "name": "Stand",
+              "description": "Stand for BPS C5 series",
+              "price": 1500000
+            },
+            {
+              "materialNumber": "HW-TFL-501",
+              "name": "Traffic light",
+              "description": "Traffic Light for BPS C5 series",
+              "price": 1000000
+            }
+          ]
+        },
+        {
+          "category": "Software Options",
+          "products": [
+            {
+              "materialNumber": "SW-CA-501",
+              "name": "Currency Adaptation",
+              "description": "Currency Adaptation for BPS C5 series",
+              "price": 7000000
+            },
+            {
+              "materialNumber": "SW-SN-501",
+              "name": "Serial number reading",
+              "description": "Serial Number Reading for BPS C5 series",
+              "price": 4500000
+            },
+            {
+              "materialNumber": "SW-TR-501",
+              "name": "Ticket reading",
+              "description": "Ticket Reading for BPS C5 series",
+              "price": 5000000
+            },
+            {
+              "materialNumber": "SW-FDP-501",
+              "name": "Fast Deposit Processing",
+              "description": "Fast Deposit Processing for BPS C5 series",
+              "price": 8000000
+            },
+            {
+              "materialNumber": "SW-VID-501",
+              "name": "Video surveillance interface",
+              "description": "Video Surveillance Interface for BPS C5 series",
+              "price": 5500000
+            }
+          ]
+        },
+        {
+          "category": "Service",
+          "products": [
+            {
+              "materialNumber": "SRV-LK-501",
+              "name": "License key creation",
+              "description": "License Key Creation for BPS C5 series",
+              "price": 700000
+            },
+            {
+              "materialNumber": "SRV-AF-501",
+              "name": "Activation file creation",
+              "description": "Activation File Creation for BPS C5 series",
+              "price": 500000
+            }
+          ]
+        }
+      ]
+    },
+    "BPSC6": {
+      "items": [
+        {
+          "category": "System Configurations",
+          "products": [
+            {
+              "materialNumber": "BPS-C6-4-001",
+              "name": "BPS C6-4",
+              "description": "BPS C6-4 Base Model",
+              "price": 55000000
+            },
+            {
+              "materialNumber": "BPS-C6-8-001",
+              "name": "BPS C6-8",
+              "description": "BPS C6-8 Enhanced Model",
+              "price": 68000000
+            }
+          ]
+        },
+        {
+          "category": "Hardware Options",
+          "products": [
+            {
+              "materialNumber": "HW-ED-601",
+              "name": "External display",
+              "description": "External Display for BPS C6 series",
+              "price": 4000000
+            },
+            {
+              "materialNumber": "HW-TP-601",
+              "name": "Thermal printer",
+              "description": "Thermal Printer for BPS C6 series",
+              "price": 2000000
+            },
+            {
+              "materialNumber": "HW-BR-601",
+              "name": "Barcode reader",
+              "description": "Barcode Reader for BPS C6 series",
+              "price": 2200000
+            },
+            {
+              "materialNumber": "HW-UPS-601",
+              "name": "UPS",
+              "description": "UPS for BPS C6 series",
+              "price": 3500000
+            },
+            {
+              "materialNumber": "HW-ARM-601",
+              "name": "GUI arm",
+              "description": "GUI Arm for BPS C6 series",
+              "price": 2500000
+            },
+            {
+              "materialNumber": "HW-STD-601",
+              "name": "Stand",
+              "description": "Stand for BPS C6 series",
+              "price": 1800000
+            },
+            {
+              "materialNumber": "HW-TFL-601",
+              "name": "Traffic light",
+              "description": "Traffic Light for BPS C6 series",
+              "price": 1200000
+            }
+          ]
+        },
+        {
+          "category": "Software Options",
+          "products": [
+            {
+              "materialNumber": "SW-CA-601",
+              "name": "Currency Adaptation",
+              "description": "Currency Adaptation for BPS C6 series",
+              "price": 8000000
+            },
+            {
+              "materialNumber": "SW-SN-601",
+              "name": "Serial number reading",
+              "description": "Serial Number Reading for BPS C6 series",
+              "price": 5000000
+            },
+            {
+              "materialNumber": "SW-TR-601",
+              "name": "Ticket reading",
+              "description": "Ticket Reading for BPS C6 series",
+              "price": 5500000
+            },
+            {
+              "materialNumber": "SW-FDP-601",
+              "name": "Fast Deposit Processing",
+              "description": "Fast Deposit Processing for BPS C6 series",
+              "price": 9000000
+            },
+            {
+              "materialNumber": "SW-VID-601",
+              "name": "Video surveillance interface",
+              "description": "Video Surveillance Interface for BPS C6 series",
+              "price": 6000000
+            }
+          ]
+        },
+        {
+          "category": "Service",
+          "products": [
+            {
+              "materialNumber": "SRV-LK-601",
+              "name": "License key creation",
+              "description": "License Key Creation for BPS C6 series",
+              "price": 800000
+            },
+            {
+              "materialNumber": "SRV-AF-601",
+              "name": "Activation file creation",
+              "description": "Activation File Creation for BPS C6 series",
+              "price": 600000
+            }
+          ]
         }
       ]
     }

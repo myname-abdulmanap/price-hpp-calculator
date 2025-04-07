@@ -1,29 +1,31 @@
 {
   "CompassAssetManager": {
-    "Subscriptions": [
+    "Starter": [
       {
-        "name": "Set-up Fee per Customer",
-        "id": "555279001",
-        "price": 136800000,
-        "description": "One-time cost, excluding travel expenses"
+        "id": "CAM-ST-SETUP",
+        "name": "Set-up fee",
+        "price": 12000000,
+        "description": "Initial set-up fee for Compass Asset Manager Starter package"
       },
       {
-        "name": "Annual Subscription Fee (ProNote)",
-        "id": "290001343",
-        "price": 1108000,
-        "description": "Annual subscription fee per ProNote, BPS C1/C2"
+        "id": "CAM-ST-ANNUAL",
+        "name": "Annual subscription fee",
+        "price": 8000000,
+        "description": "Annual subscription fee for Compass Asset Manager Starter package"
+      }
+    ],
+    "Premium": [
+      {
+        "id": "CAM-PR-SETUP",
+        "name": "Set-up fee",
+        "price": 18000000,
+        "description": "Initial set-up fee for Compass Asset Manager Premium package"
       },
       {
-        "name": "Annual Subscription Fee (BPS C2)",
-        "id": "290001344",
-        "price": 1478000,
-        "description": "Annual subscription fee per BPS C2"
-      },
-      {
-        "name": "Annual Subscription Fee (BPS C5)",
-        "id": "290001345",
-        "price": 13851000,
-        "description": "Annual subscription fee per BPS C5"
+        "id": "CAM-PR-ANNUAL",
+        "name": "Annual subscription fee",
+        "price": 15000000,
+        "description": "Annual subscription fee for Compass Asset Manager Premium package"
       }
     ]
   }
