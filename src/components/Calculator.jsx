@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ThemeToggle from "./DarkMode";
 import bcrypt from "bcryptjs";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
+
 
 // Import JSON data
 import ProNoteData from "../data/ProNote.json";
@@ -10,7 +14,6 @@ import IndonesiaCities from "../data/IndonesiaCities.json";
 
 function Calculator() {
   const [selectedProductLine, setSelectedProductLine] = useState("");
-  const [selectedProductType, setSelectedProductType] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedModel, setSelectedModel] = useState(null);
   const [items, setItems] = useState([]);
@@ -90,16 +93,9 @@ function Calculator() {
 
   // Reset dependent dropdowns when product line changes
   useEffect(() => {
-    setSelectedProductType("");
     setSelectedCategory("");
     setSelectedModel(null);
   }, [selectedProductLine]);
-
-  // Reset dependent dropdowns when product type changes
-  useEffect(() => {
-    setSelectedCategory("");
-    setSelectedModel(null);
-  }, [selectedProductType]);
 
   // Reset model when category changes
   useEffect(() => {
@@ -112,122 +108,39 @@ function Calculator() {
     setShippingCost(0);
   }, [selectedProvince]);
 
-  // Main product lines from PDF
-  const productLines = ["ProNote", "BPS C1", "BPS C2", "BPS C5", "BPS C6", "CompassAssetManager"];
+  // Product line dropdown options
+  const productLines = Object.keys(ProNoteData).concat(
+    Object.keys(BPSData),
+    Object.keys(CompassData)
+  );
 
-  // Get product types for each product line (based on PDF structure)
-  const getProductTypesForProductLine = () => {
+  // Get categories for selected product line
+  const getCategoriesForProductLine = () => {
     switch (selectedProductLine) {
       case "ProNote":
-        return ["System Configurations", "Hardware Options"];
-      case "BPS C1":
-      case "BPS C2":
-      case "BPS C5":
-      case "BPS C6":
-        return ["System Configurations", "Hardware Options", "Software Options", "Service"];
+        return ["Models", "ExternalDisplays", "Printers", "AdditionalOptions"];
+      case "BPS":
+        return Object.keys(BPSData.BPS);
       case "CompassAssetManager":
-        return ["Starter", "Premium"];
+        return ["Subscriptions"];
       default:
         return [];
     }
   };
 
-  // Get categories for selected product type
-  const getCategoriesForProductType = () => {
-    // This would be based on your JSON structure and PDF categories
-    switch (selectedProductType) {
-      case "System Configurations":
-        if (selectedProductLine === "ProNote") {
-          return ["ProNote 1.5", "ProNote 1.5F"];
-        } else if (selectedProductLine === "BPS C1") {
-          return ["BPS C1", "BPS C1s"];
-        } else if (selectedProductLine === "BPS C2") {
-          return ["BPS C2-2", "BPS C2-3", "BPS C2-4"];
-        } else if (selectedProductLine === "BPS C5") {
-          return ["BPS C5-5", "BPS C5-9", "BPS C5-13", "BPS C5-17", "BPS C5-21", "BPS C5-25", "BPS C5-1B"];
-        } else if (selectedProductLine === "BPS C6") {
-          return ["BPS C6-4", "BPS C6-8"];
-        }
-        return [];
-      case "Hardware Options":
-        if (selectedProductLine === "ProNote") {
-          return ["External display", "Thermal printer"];
-        } else if (selectedProductLine.startsWith("BPS")) {
-          return ["External display", "Thermal printer", "Barcode reader", "UPS", "GUI arm", "Stand", "Traffic light"];
-        }
-        return [];
-      case "Software Options":
-        if (selectedProductLine.startsWith("BPS")) {
-          return ["Currency Adaptation", "Serial number reading", "Ticket reading", "Fast Deposit Processing", "Video surveillance interface"];
-        }
-        return [];
-      case "Service":
-        return ["License key creation", "Activation file creation"];
-      case "Starter":
-      case "Premium":
-        return ["Set-up fee", "Annual subscription fee"];
-      default:
-        return [];
-    }
-  };
-
-  // This function would extract the appropriate models from your JSON data
-  // based on the selected product line, type, and category
+  // Get models for selected category
   const getModelsForCategory = () => {
-    if (!selectedProductLine || !selectedProductType || !selectedCategory) return [];
+    if (!selectedProductLine || !selectedCategory) return [];
 
-    // This is a simplified version - you'll need to map this to your actual JSON structure
-    try {
-      // For example purposes - you'll need to adjust this based on your actual JSON structure
-      let productsArray = [];
-      
-      // For BPS series
-      if (selectedProductLine.startsWith("BPS")) {
-        // Get the right BPS type from your JSON (e.g., BPS C1, BPS C2, etc.)
-        const bpsTypeData = BPSData.BPS[selectedProductLine.replace(" ", "")];
-        
-        if (bpsTypeData && bpsTypeData.items) {
-          // Find the category that matches the selected type (System Configurations, Hardware Options, etc.)
-          const categoryData = bpsTypeData.items.find(item => item.category === selectedProductType);
-          
-          if (categoryData && categoryData.products) {
-            // Filter products that match the selected category (specific models)
-            productsArray = categoryData.products.filter(product => 
-              product.name.includes(selectedCategory) || 
-              product.description.includes(selectedCategory)
-            );
-          }
-        }
-      }
-      // Handle ProNote similarly
-      else if (selectedProductLine === "ProNote") {
-        const proNoteData = ProNoteData.ProNote;
-        if (selectedProductType === "System Configurations") {
-          productsArray = proNoteData.Models?.filter(model => 
-            model.name.includes(selectedCategory)
-          ) || [];
-        } else if (selectedProductType === "Hardware Options") {
-          if (selectedCategory === "External display") {
-            productsArray = proNoteData.ExternalDisplays || [];
-          } else if (selectedCategory === "Thermal printer") {
-            productsArray = proNoteData.Printers || [];
-          }
-        }
-      }
-      // Handle Compass Asset Manager
-      else if (selectedProductLine === "CompassAssetManager") {
-        productsArray = CompassData.CompassAssetManager[selectedProductType] || [];
-      }
-
-      return productsArray.map(product => ({
-        id: product.id || product.materialNumber,
-        name: product.name || product.description,
-        price: product.price,
-        description: product.description || ""
-      }));
-    } catch (error) {
-      console.error("Error getting models for category:", error);
-      return [];
+    switch (selectedProductLine) {
+      case "ProNote":
+        return ProNoteData.ProNote[selectedCategory] || [];
+      case "BPS":
+        return BPSData.BPS[selectedCategory]?.Models || [];
+      case "CompassAssetManager":
+        return CompassData.CompassAssetManager[selectedCategory] || [];
+      default:
+        return [];
     }
   };
 
@@ -293,6 +206,148 @@ function Calculator() {
     const multiplier =
       distanceMultiplier[region] || distanceMultiplier["Luar Jawa"];
     return Math.round(baseRate * multiplier);
+  };
+
+  // Export to PDF function
+  const exportToPDF = () => {
+    // Create new PDF document
+    const doc = new jsPDF();
+    
+    // Add title with proper font settings
+    doc.setFontSize(18);
+    doc.text("Ringkasan Konfigurasi Produk", 14, 22);
+    
+    // Add date
+    const today = new Date();
+    doc.setFontSize(10);
+    doc.text(`Tanggal: ${today.toLocaleDateString('id-ID')}`, 14, 30);
+    
+    // Format the data for table
+    const tableData = items.map(item => [
+      item.name,
+      item.description || "-",
+      `Rp ${Number(item.price).toLocaleString('id-ID')}`
+    ]);
+    
+    // Add product table
+    
+    autoTable(doc,{
+      head: [["Nama", "Deskripsi", "Harga (Rp)"]],
+      body: tableData,
+      startY: 40,
+      styles: {
+        fontSize: 10,
+        cellPadding: 3,
+      },
+      headStyles: {
+        fillColor: [66, 66, 66],
+      },
+      // didDrawPage: function (data) {
+      //   // Kosongkan atau hapus bagian ini dulu
+      // }
+      
+    });
+
+    const pageCount = doc.getNumberOfPages();
+for (let i = 1; i <= pageCount; i++) {
+  doc.setPage(i);
+  doc.setFontSize(8);
+  doc.text(
+    `Halaman ${i} dari ${pageCount}`,
+    doc.internal.pageSize.width / 2,
+    doc.internal.pageSize.height - 10,
+    { align: "center" }
+  );
+}
+
+    
+    // Calculate last Y position
+    const finalY = doc.lastAutoTable.finalY + 20;
+    
+    // Add summary information
+    doc.setFontSize(12);
+    doc.text("Ringkasan Biaya:", 14, finalY);
+    doc.setFontSize(10);
+    
+    // Use a consistent spacing value
+    const lineSpacing = 8;
+    let currentY = finalY + 10;
+    
+    // Add each summary line with proper formatting
+    doc.text(`Total Biaya Material: Rp ${totalMaterialCost.toLocaleString('id-ID')}`, 14, currentY);
+    currentY += lineSpacing;
+    
+    doc.text(`Biaya Tenaga Kerja: Rp ${Number(laborCost).toLocaleString('id-ID')}`, 14, currentY);
+    currentY += lineSpacing;
+    
+    doc.text(`Biaya Sewa: Rp ${Number(rentCost).toLocaleString('id-ID')}`, 14, currentY);
+    currentY += lineSpacing;
+    
+    doc.text(`HPP: Rp ${totalHPP.toLocaleString('id-ID')}`, 14, currentY);
+    currentY += lineSpacing;
+    
+    doc.text(`Margin Keuntungan: ${profitMargin}%`, 14, currentY);
+    currentY += lineSpacing;
+    
+    doc.text(`Biaya Pengiriman: Rp ${shippingCost.toLocaleString('id-ID')}`, 14, currentY);
+    currentY += lineSpacing * 1.5;
+    
+    // Add selling price with highlight
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Harga Jual: Rp ${sellingPrice.toLocaleString('id-ID')}`, 14, currentY);
+    currentY += lineSpacing * 2;
+    
+    // Add shipping information if available
+    if (selectedProvince && selectedCity) {
+      doc.setFontSize(12);
+      doc.text("Informasi Pengiriman:", 14, currentY);
+      currentY += lineSpacing;
+      
+      doc.setFontSize(10);
+      doc.text(`Provinsi: ${selectedProvince}`, 14, currentY);
+      currentY += lineSpacing;
+      
+      doc.text(`Kota: ${selectedCity}`, 14, currentY);
+    }
+    
+    // Save the PDF
+    doc.save("konfigurasi-produk.pdf");
+  };
+
+  // Export to Excel function
+  const exportToExcel = () => {
+    // Prepare data for products
+    const productData = items.map(item => ({
+      "Nama": item.name,
+      "Deskripsi": item.description || "-",
+      "Harga (Rp)": Number(item.price)
+    }));
+    
+    // Prepare summary data
+    const summaryData = [
+      { "Ringkasan Biaya": "Total Biaya Material", "Nilai": totalMaterialCost },
+      { "Ringkasan Biaya": "Biaya Tenaga Kerja", "Nilai": Number(laborCost) },
+      { "Ringkasan Biaya": "Biaya Sewa", "Nilai": Number(rentCost) },
+      { "Ringkasan Biaya": "HPP", "Nilai": totalHPP },
+      { "Ringkasan Biaya": "Margin Keuntungan (%)", "Nilai": Number(profitMargin) },
+      { "Ringkasan Biaya": "Biaya Pengiriman", "Nilai": shippingCost },
+      { "Ringkasan Biaya": "Harga Jual", "Nilai": sellingPrice }
+    ];
+    
+    // Create a workbook with multiple sheets
+    const wb = XLSX.utils.book_new();
+    
+    // Add products sheet
+    const wsProducts = XLSX.utils.json_to_sheet(productData);
+    XLSX.utils.book_append_sheet(wb, wsProducts, "Daftar Produk");
+    
+    // Add summary sheet
+    const wsSummary = XLSX.utils.json_to_sheet(summaryData);
+    XLSX.utils.book_append_sheet(wb, wsSummary, "Ringkasan Biaya");
+    
+    // Save the Excel file
+    XLSX.writeFile(wb, "konfigurasi-produk.xlsx");
   };
 
   // Render login form if not authenticated
@@ -363,33 +418,16 @@ function Calculator() {
                 </select>
               </div>
 
-              {/* Product Type Dropdown (new) */}
-              <div className="input-group">
-                <label>Pilih Tipe</label>
-                <select
-                  value={selectedProductType}
-                  onChange={(e) => setSelectedProductType(e.target.value)}
-                  disabled={!selectedProductLine}
-                >
-                  <option value="">Pilih Tipe</option>
-                  {getProductTypesForProductLine().map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
               {/* Category Dropdown */}
               <div className="input-group">
                 <label>Pilih Kategori</label>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  disabled={!selectedProductType}
+                  disabled={!selectedProductLine}
                 >
                   <option value="">Pilih Kategori</option>
-                  {getCategoriesForProductType().map((category) => (
+                  {getCategoriesForProductLine().map((category) => (
                     <option key={category} value={category}>
                       {category}
                     </option>
@@ -413,17 +451,18 @@ function Calculator() {
                   <option value="">Pilih Model</option>
                   {getModelsForCategory().map((model) => (
                     <option key={model.id} value={model.id}>
-                      {model.name} - Rp {Number(model.price).toLocaleString()}
+                      {model.name} - Rp {model.price.toLocaleString()}
                     </option>
                   ))}
                 </select>
               </div>
             </div>
 
-            {/* Description Display */}
+            {/* Product Description Section - Added new section */}
             {selectedModel && selectedModel.description && (
-              <div className="description-box">
-                <p><strong>Deskripsi:</strong> {selectedModel.description}</p>
+              <div className="description-container">
+                <h4>Deskripsi Produk</h4>
+                <p>{selectedModel.description}</p>
               </div>
             )}
 
@@ -530,6 +569,7 @@ function Calculator() {
                 <thead>
                   <tr>
                     <th>Nama</th>
+                    <th>Deskripsi</th>
                     <th>Harga (Rp)</th>
                     <th>Aksi</th>
                   </tr>
@@ -538,6 +578,7 @@ function Calculator() {
                   {items.map((item, index) => (
                     <tr key={index}>
                       <td>{item.name}</td>
+                      <td>{item.description || "-"}</td>
                       <td>Rp {Number(item.price).toLocaleString()}</td>
                       <td>
                         <button
@@ -551,6 +592,16 @@ function Calculator() {
                   ))}
                 </tbody>
               </table>
+              
+              {/* Export Buttons - Added below table */}
+              <div className="export-buttons">
+                <button onClick={exportToPDF} className="export-button pdf-button">
+                  <span className="button-icon">📄</span> Export ke PDF
+                </button>
+                <button onClick={exportToExcel} className="export-button excel-button">
+                  <span className="button-icon">📊</span> Export ke Excel
+                </button>
+              </div>
             </div>
           )}
 

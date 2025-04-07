@@ -19,6 +19,10 @@
     {
       "name": "Jakarta Timur",
       "region": "Jabodetabek"
+    },
+    {
+      "name": "Kepulauan Seribu",
+      "region": "Jabodetabek"
     }
   ],
   "Jawa Barat": [
@@ -45,6 +49,54 @@
     {
       "name": "Tasikmalaya",
       "region": "Jawa"
+    },
+    {
+      "name": "Sukabumi",
+      "region": "Jawa"
+    },
+    {
+      "name": "Banjar",
+      "region": "Jawa"
+    },
+    {
+      "name": "Cimahi",
+      "region": "Jawa"
+    },
+    {
+      "name": "Garut",
+      "region": "Jawa"
+    },
+    {
+      "name": "Kuningan",
+      "region": "Jawa"
+    },
+    {
+      "name": "Ciamis",
+      "region": "Jawa"
+    },
+    {
+      "name": "Majalengka",
+      "region": "Jawa"
+    },
+    {
+      "name": "Purwakarta",
+      "region": "Jawa"
+    },
+    {
+      "name": "Subang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Sumedang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Indramayu",
+      "region": "Jawa"
+    },
+    {
+      "name": "Karawang",
+      "region": "Jawa"
     }
   ],
   "Jawa Tengah": [
@@ -53,7 +105,7 @@
       "region": "Jawa"
     },
     {
-      "name": "Solo",
+      "name": "Solo (Surakarta)",
       "region": "Jawa"
     },
     {
@@ -62,6 +114,100 @@
     },
     {
       "name": "Magelang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Pekalongan",
+      "region": "Jawa"
+    },
+    {
+      "name": "Salatiga",
+      "region": "Jawa"
+    },
+    {
+      "name": "Banyumas",
+      "region": "Jawa"
+    },
+    {
+      "name": "Boyolali",
+      "region": "Jawa"
+    },
+    {
+      "name": "Cilacap",
+      "region": "Jawa"
+    },
+    {
+      "name": "Demak",
+      "region": "Jawa"
+    },
+    {
+      "name": "Jepara",
+      "region": "Jawa"
+    },
+    {
+      "name": "Karanganyar",
+      "region": "Jawa"
+    },
+    {
+      "name": "Kebumen",
+      "region": "Jawa"
+    },
+    {
+      "name": "Kendal",
+      "region": "Jawa"
+    },
+    {
+      "name": "Klaten",
+      "region": "Jawa"
+    },
+    {
+      "name": "Kudus",
+      "region": "Jawa"
+    },
+    {
+      "name": "Purbalingga",
+      "region": "Jawa"
+    },
+    {
+      "name": "Purworejo",
+      "region": "Jawa"
+    },
+    {
+      "name": "Rembang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Sragen",
+      "region": "Jawa"
+    },
+    {
+      "name": "Sukoharjo",
+      "region": "Jawa"
+    },
+    {
+      "name": "Wonogiri",
+      "region": "Jawa"
+    }
+  ],
+  "DIY Yogyakarta": [
+    {
+      "name": "Yogyakarta",
+      "region": "Jawa"
+    },
+    {
+      "name": "Sleman",
+      "region": "Jawa"
+    },
+    {
+      "name": "Bantul",
+      "region": "Jawa"
+    },
+    {
+      "name": "Kulon Progo",
+      "region": "Jawa"
+    },
+    {
+      "name": "Gunung Kidul",
       "region": "Jawa"
     }
   ],
@@ -81,6 +227,70 @@
     {
       "name": "Kediri",
       "region": "Jawa"
+    },
+    {
+      "name": "Jember",
+      "region": "Jawa"
+    },
+    {
+      "name": "Pasuruan",
+      "region": "Jawa"
+    },
+    {
+      "name": "Mojokerto",
+      "region": "Jawa"
+    },
+    {
+      "name": "Banyuwangi",
+      "region": "Jawa"
+    },
+    {
+      "name": "Probolinggo",
+      "region": "Jawa"
+    },
+    {
+      "name": "Madiun",
+      "region": "Jawa"
+    },
+    {
+      "name": "Blitar",
+      "region": "Jawa"
+    },
+    {
+      "name": "Gresik",
+      "region": "Jawa"
+    },
+    {
+      "name": "Lamongan",
+      "region": "Jawa"
+    },
+    {
+      "name": "Tuban",
+      "region": "Jawa"
+    },
+    {
+      "name": "Bojonegoro",
+      "region": "Jawa"
+    },
+    {
+      "name": "Nganjuk",
+      "region": "Jawa"
+    },
+    {
+      "name": "Lumajang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Tulungagung",
+      "region": "Jawa"
+    },
+    {
+      "name": "Bondowoso",
+      "region": "Jawa"
+    },
+    {
+      "name": "Madura",
+      "region": "Jawa"
     }
   ],
   "Banten": [
@@ -99,6 +309,14 @@
     {
       "name": "Cilegon",
       "region": "Jawa"
+    },
+    {
+      "name": "Pandeglang",
+      "region": "Jawa"
+    },
+    {
+      "name": "Lebak",
+      "region": "Jawa"
     }
   ],
   "Bali": [
@@ -112,6 +330,52 @@
     },
     {
       "name": "Gianyar",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Buleleng",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tabanan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Jembrana",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bangli",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Karangasem",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Klungkung",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Aceh": [
+    {
+      "name": "Banda Aceh",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Lhokseumawe",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Langsa",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sabang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Meulaboh",
       "region": "Luar Jawa"
     }
   ],
@@ -127,6 +391,102 @@
     {
       "name": "Pematangsiantar",
       "region": "Luar Jawa"
+    },
+    {
+      "name": "Tebing Tinggi",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Padang Sidempuan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tanjung Balai",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sibolga",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Gunung Sitoli",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sumatera Barat": [
+    {
+      "name": "Padang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bukittinggi",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Payakumbuh",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sawahlunto",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Padang Panjang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Solok",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Pariaman",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Riau": [
+    {
+      "name": "Pekanbaru",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Dumai",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Siak",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Duri",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kepulauan Riau": [
+    {
+      "name": "Tanjung Pinang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Batam",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bintan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Karimun",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Jambi": [
+    {
+      "name": "Jambi",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sungai Penuh",
+      "region": "Luar Jawa"
     }
   ],
   "Sumatera Selatan": [
@@ -136,6 +496,154 @@
     },
     {
       "name": "Prabumulih",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Lubuklinggau",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Pagar Alam",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Bangka Belitung": [
+    {
+      "name": "Pangkal Pinang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tanjung Pandan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Muntok",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Bengkulu": [
+    {
+      "name": "Bengkulu",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Lampung": [
+    {
+      "name": "Bandar Lampung",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Metro",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kalimantan Barat": [
+    {
+      "name": "Pontianak",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Singkawang",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kalimantan Tengah": [
+    {
+      "name": "Palangkaraya",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sampit",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kalimantan Selatan": [
+    {
+      "name": "Banjarmasin",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Banjarbaru",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Martapura",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kalimantan Timur": [
+    {
+      "name": "Samarinda",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Balikpapan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bontang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tenggarong",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Kalimantan Utara": [
+    {
+      "name": "Tarakan",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tanjung Selor",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Malinau",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sulawesi Utara": [
+    {
+      "name": "Manado",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bitung",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tomohon",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Kotamobagu",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Gorontalo": [
+    {
+      "name": "Gorontalo",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sulawesi Tengah": [
+    {
+      "name": "Palu",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Toli-Toli",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sulawesi Barat": [
+    {
+      "name": "Mamuju",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Majene",
       "region": "Luar Jawa"
     }
   ],
@@ -147,15 +655,125 @@
     {
       "name": "Parepare",
       "region": "Luar Jawa"
-    }
-  ],
-  "Kalimantan Timur": [
+    },
     {
-      "name": "Samarinda",
+      "name": "Palopo",
       "region": "Luar Jawa"
     },
     {
-      "name": "Balikpapan",
+      "name": "Bone",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Gowa",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tana Toraja",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Sulawesi Tenggara": [
+    {
+      "name": "Kendari",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bau-Bau",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Maluku": [
+    {
+      "name": "Ambon",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tual",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Maluku Utara": [
+    {
+      "name": "Ternate",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Tidore",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Papua": [
+    {
+      "name": "Jayapura",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Merauke",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Papua Barat": [
+    {
+      "name": "Manokwari",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sorong",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Papua Selatan": [
+    {
+      "name": "Merauke",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Papua Tengah": [
+    {
+      "name": "Nabire",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Papua Pegunungan": [
+    {
+      "name": "Wamena",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Nusa Tenggara Barat": [
+    {
+      "name": "Mataram",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Bima",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Sumbawa",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Lombok",
+      "region": "Luar Jawa"
+    }
+  ],
+  "Nusa Tenggara Timur": [
+    {
+      "name": "Kupang",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Labuan Bajo",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Maumere",
+      "region": "Luar Jawa"
+    },
+    {
+      "name": "Ende",
       "region": "Luar Jawa"
     }
   ]
