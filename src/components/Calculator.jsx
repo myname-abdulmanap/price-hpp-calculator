@@ -5,7 +5,6 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import * as XLSX from "xlsx";
 
-
 // Import JSON data
 import ProNoteData from "../data/ProNote.json";
 import BPSData from "../data/BPS.json";
@@ -212,26 +211,26 @@ function Calculator() {
   const exportToPDF = () => {
     // Create new PDF document
     const doc = new jsPDF();
-    
+
     // Add title with proper font settings
     doc.setFontSize(18);
     doc.text("Ringkasan Konfigurasi Produk", 14, 22);
-    
+
     // Add date
     const today = new Date();
     doc.setFontSize(10);
-    doc.text(`Tanggal: ${today.toLocaleDateString('id-ID')}`, 14, 30);
-    
+    doc.text(`Tanggal: ${today.toLocaleDateString("id-ID")}`, 14, 30);
+
     // Format the data for table
-    const tableData = items.map(item => [
+    const tableData = items.map((item) => [
       item.name,
       item.description || "-",
-      `Rp ${Number(item.price).toLocaleString('id-ID')}`
+      `Rp ${Number(item.price).toLocaleString("id-ID")}`,
     ]);
-    
+
     // Add product table
-    
-    autoTable(doc,{
+
+    autoTable(doc, {
       head: [["Nama", "Deskripsi", "Harga (Rp)"]],
       body: tableData,
       startY: 40,
@@ -245,72 +244,90 @@ function Calculator() {
       // didDrawPage: function (data) {
       //   // Kosongkan atau hapus bagian ini dulu
       // }
-      
     });
 
     const pageCount = doc.getNumberOfPages();
-for (let i = 1; i <= pageCount; i++) {
-  doc.setPage(i);
-  doc.setFontSize(8);
-  doc.text(
-    `Halaman ${i} dari ${pageCount}`,
-    doc.internal.pageSize.width / 2,
-    doc.internal.pageSize.height - 10,
-    { align: "center" }
-  );
-}
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(8);
+      doc.text(
+        `Halaman ${i} dari ${pageCount}`,
+        doc.internal.pageSize.width / 2,
+        doc.internal.pageSize.height - 10,
+        { align: "center" }
+      );
+    }
 
-    
     // Calculate last Y position
     const finalY = doc.lastAutoTable.finalY + 20;
-    
+
     // Add summary information
     doc.setFontSize(12);
     doc.text("Ringkasan Biaya:", 14, finalY);
     doc.setFontSize(10);
-    
+
     // Use a consistent spacing value
     const lineSpacing = 8;
     let currentY = finalY + 10;
-    
+
     // Add each summary line with proper formatting
-    doc.text(`Total Biaya Material: Rp ${totalMaterialCost.toLocaleString('id-ID')}`, 14, currentY);
+    doc.text(
+      `Total Biaya Material: Rp ${totalMaterialCost.toLocaleString("id-ID")}`,
+      14,
+      currentY
+    );
     currentY += lineSpacing;
-    
-    doc.text(`Biaya Tenaga Kerja: Rp ${Number(laborCost).toLocaleString('id-ID')}`, 14, currentY);
+
+    doc.text(
+      `Biaya Tenaga Kerja: Rp ${Number(laborCost).toLocaleString("id-ID")}`,
+      14,
+      currentY
+    );
     currentY += lineSpacing;
-    
-    doc.text(`Biaya Sewa: Rp ${Number(rentCost).toLocaleString('id-ID')}`, 14, currentY);
+
+    doc.text(
+      `Biaya Sewa: Rp ${Number(rentCost).toLocaleString("id-ID")}`,
+      14,
+      currentY
+    );
     currentY += lineSpacing;
-    
-    doc.text(`HPP: Rp ${totalHPP.toLocaleString('id-ID')}`, 14, currentY);
+
+    doc.text(`HPP: Rp ${totalHPP.toLocaleString("id-ID")}`, 14, currentY);
     currentY += lineSpacing;
-    
+
     doc.text(`Margin Keuntungan: ${profitMargin}%`, 14, currentY);
     currentY += lineSpacing;
-    
-    doc.text(`Biaya Pengiriman: Rp ${shippingCost.toLocaleString('id-ID')}`, 14, currentY);
+
+    doc.text(
+      `Biaya Pengiriman: Rp ${shippingCost.toLocaleString("id-ID")}`,
+      14,
+      currentY
+    );
     currentY += lineSpacing * 1.5;
-    
+
     // Add selling price with highlight
     doc.setFontSize(14);
     doc.setTextColor(0, 0, 0);
-    doc.text(`Harga Jual: Rp ${sellingPrice.toLocaleString('id-ID')}`, 14, currentY);
+    doc.text(
+      `Harga Jual: Rp ${sellingPrice.toLocaleString("id-ID")}`,
+      14,
+      currentY
+    );
     currentY += lineSpacing * 2;
-    
+
     // Add shipping information if available
     if (selectedProvince && selectedCity) {
       doc.setFontSize(12);
       doc.text("Informasi Pengiriman:", 14, currentY);
       currentY += lineSpacing;
-      
+
       doc.setFontSize(10);
       doc.text(`Provinsi: ${selectedProvince}`, 14, currentY);
       currentY += lineSpacing;
-      
+
       doc.text(`Kota: ${selectedCity}`, 14, currentY);
     }
-    
+
     // Save the PDF
     doc.save("konfigurasi-produk.pdf");
   };
@@ -318,34 +335,37 @@ for (let i = 1; i <= pageCount; i++) {
   // Export to Excel function
   const exportToExcel = () => {
     // Prepare data for products
-    const productData = items.map(item => ({
-      "Nama": item.name,
-      "Deskripsi": item.description || "-",
-      "Harga (Rp)": Number(item.price)
+    const productData = items.map((item) => ({
+      Nama: item.name,
+      Deskripsi: item.description || "-",
+      "Harga (Rp)": Number(item.price),
     }));
-    
+
     // Prepare summary data
     const summaryData = [
-      { "Ringkasan Biaya": "Total Biaya Material", "Nilai": totalMaterialCost },
-      { "Ringkasan Biaya": "Biaya Tenaga Kerja", "Nilai": Number(laborCost) },
-      { "Ringkasan Biaya": "Biaya Sewa", "Nilai": Number(rentCost) },
-      { "Ringkasan Biaya": "HPP", "Nilai": totalHPP },
-      { "Ringkasan Biaya": "Margin Keuntungan (%)", "Nilai": Number(profitMargin) },
-      { "Ringkasan Biaya": "Biaya Pengiriman", "Nilai": shippingCost },
-      { "Ringkasan Biaya": "Harga Jual", "Nilai": sellingPrice }
+      { "Ringkasan Biaya": "Total Biaya Material", Nilai: totalMaterialCost },
+      { "Ringkasan Biaya": "Biaya Tenaga Kerja", Nilai: Number(laborCost) },
+      { "Ringkasan Biaya": "Biaya Sewa", Nilai: Number(rentCost) },
+      { "Ringkasan Biaya": "HPP", Nilai: totalHPP },
+      {
+        "Ringkasan Biaya": "Margin Keuntungan (%)",
+        Nilai: Number(profitMargin),
+      },
+      { "Ringkasan Biaya": "Biaya Pengiriman", Nilai: shippingCost },
+      { "Ringkasan Biaya": "Harga Jual", Nilai: sellingPrice },
     ];
-    
+
     // Create a workbook with multiple sheets
     const wb = XLSX.utils.book_new();
-    
+
     // Add products sheet
     const wsProducts = XLSX.utils.json_to_sheet(productData);
     XLSX.utils.book_append_sheet(wb, wsProducts, "Daftar Produk");
-    
+
     // Add summary sheet
     const wsSummary = XLSX.utils.json_to_sheet(summaryData);
     XLSX.utils.book_append_sheet(wb, wsSummary, "Ringkasan Biaya");
-    
+
     // Save the Excel file
     XLSX.writeFile(wb, "konfigurasi-produk.xlsx");
   };
@@ -592,13 +612,19 @@ for (let i = 1; i <= pageCount; i++) {
                   ))}
                 </tbody>
               </table>
-              
+
               {/* Export Buttons - Added below table */}
               <div className="export-buttons">
-                <button onClick={exportToPDF} className="export-button pdf-button">
+                <button
+                  onClick={exportToPDF}
+                  className="export-button pdf-button"
+                >
                   <span className="button-icon">📄</span> Export ke PDF
                 </button>
-                <button onClick={exportToExcel} className="export-button excel-button">
+                <button
+                  onClick={exportToExcel}
+                  className="export-button excel-button"
+                >
                   <span className="button-icon">📊</span> Export ke Excel
                 </button>
               </div>
