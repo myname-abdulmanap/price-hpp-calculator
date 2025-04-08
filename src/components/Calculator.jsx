@@ -177,7 +177,8 @@ function Calculator() {
   );
   const totalHPP = totalMaterialCost + Number(laborCost) + Number(rentCost);
   const sellingPrice =
-    totalHPP + totalHPP * (profitMargin / 100) + Number(shippingCost);
+  (totalHPP / (1 - profitMargin / 100)) + Number(shippingCost);
+
 
   // Get provinces
   const provinces = Object.keys(IndonesiaCities);
