@@ -1,0 +1,270 @@
+{
+  "BPSC5": {
+    "Models": [
+      {
+        "name": "BPS C5-5",
+        "id": "538434001-1",
+        "price": 188100000,
+        "description": "Input module with 5 output stackers"
+      },
+      {
+        "name": "BPS C5-9",
+        "id": "5384340013-2",
+        "price": 273600000,
+        "description": "Input module with 9 output stackers (5 + 4)"
+      },
+      {
+        "name": "BPS C5-13",
+        "id": "538434001-3",
+        "price": 359100000,
+        "description": "Input module with 13 output stackers (5 + 4 + 4)"
+      },
+      {
+        "name": "BPS C5-17, price on request",
+        "id": "538434001-4",
+        "price": 0,
+        "description": "Input module with 17 output stackers (5 + 4 + 4 + 4), price on request"
+      },
+      {
+        "name": "BPS C5-21, price on request",
+        "id": "538434001-5",
+        "price": 0,
+        "description": "Input module with 21 output stackers (5 + 4 + 4 + 4 + 4), price on request"
+      },
+      {
+        "name": "BPS C5-25, price on request",
+        "id": "538434001-6",
+        "price": 0,
+        "description": "Input module with 25 output stackers (5 + 4 + 4 + 4 + 4 + 4), price on request"
+      },
+      {
+        "name": "BPS C5-1B, price on request",
+        "id": "538434001-7",
+        "price": 0,
+        "description": "Input module with 1 Bander Delivery Module (BDM), price on request"
+      }
+    ],
+    "Hardware Options": {
+      "Standard Delivery Module": [
+        {
+          "name": "[BPSC5] Standard Delivery Module (SDM)",
+          "id": "524986021",
+          "price": 128250000,
+          "description": "Upgrade of an existing system with an additional SDM (max. 6 modules can be connected to a system in total). One SDM contains 4 stackers for loose banknotes."
+        }
+      ],
+      "Bander Delivery Module": [
+        {
+          "name": "[BPSC5] Bander Delivery Module (BDM)",
+          "id": "536820001",
+          "price": 444600000,
+          "description": "With the BDM, the functionality of online banding can be added to the BPS C5; one BDM is designated to one denomination (2 stackers working in tandem)."
+        }
+      ],
+      "External display": [
+        {
+          "name": "[BPSC5] External display - Model: PD 7000",
+          "id": "527732001",
+          "price": 3160000,
+          "description": "TFT 7\" LCD monitor, 20 characters by 3 lines, USB 2.0"
+        }
+      ],
+      "GUI": [
+        {
+         "name": "7\" GUI",
+          "id": "552710001",
+          "price": 0,
+          "description": "Optional 7\" display with high resolution GUI (from R3.15 onwards), see price in Spare Parts Catalogue"
+        }
+      ],
+      "Thermal printer": [
+        {
+          "name": "[BPSC5] Thermal printer",
+          "id": "524104001",
+          "price": 3415000,
+          "description": "3 inch, 80 mm, speed 250mm/sec, USB 2.0"
+        }
+      ],
+      "Barcode reader": [
+        {
+          "name": "[BPSC5] Barcode reader",
+          "id": "516604001",
+          "price": 2052000,
+          "description": "Required for FDP and HDP processing"
+        }
+      ],
+      "UPS": [
+        {
+          "name": "[BPSC5] Uninterrupted power supply (UPS)",
+          "id": "528216000",
+          "price": 0,
+          "description": "Required for regions with frequent power failures"
+        }
+      ],
+      "Upgrade Spares for BDM": [
+        {
+          "name": "[BPSC5] Image sensor PIS 7S",
+          "id": "538606001",
+          "price": 0,
+          "description": "Required parts for BPS C5 hardware releases <R3.7, for 220V (up to six modules) as well as 110V (up to two modules)"
+        },
+        {
+          "name": "[BPSC5] Image sensor PIS 7S and Panel element INL ASSY",
+          "id": "538606001-540895001",
+          "price": 0,
+          "description": "Required parts for BPS C5 hardware releases <R3.7 for 110V with more than 2 BDMs"
+        },
+        {
+          "name": "[BPSC5] Panel element INL ASSY",
+          "id": "540895001",
+          "price": 0,
+          "description": "Required parts for BPS C5 hardware releases = R3.7 and 110V with more than 2 BDMs"
+        }
+      ],
+      "GUI mounting kit": [
+        {
+          "name": "[BPSC5] GUI mounting kit",
+          "id": "548225001",
+          "price": 2035000,
+          "description": "The mounting kit allows to attach the GUI to the BPS C5 enclosure (from R3.10 onwards)"
+        }
+      ],
+      "Stand": [
+        {
+          "name": "[BPSC5] Stand",
+          "id": "552708001",
+          "price": 436000,
+          "description": "GUI table stand with flexible angle adjustment (only for high resolution GUI)"
+        }
+      ],
+      "Traffic light": [
+        {
+          "name": "[BPSC5] Traffic light",
+          "id": "552462001",
+          "price": 1890000,
+          "description": "Singler status identification (from R3.15 onwards)"
+        }
+      ],
+      "Bander output slider": [
+        {
+          "name": "[BPSC5] Bander output slider",
+          "id": "553637001",
+          "price": 2180000,
+          "description": "Bander output slider will slide the banded packets from bander output"
+        }
+      ]
+    },
+    "Currency Adaptation": {
+      "Multi currency package": [
+        {
+          "name": "[BPSC5] Multi currency package 2-5 currency",
+          "id": "546413001",
+          "price": 5387000,
+          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations."
+        },
+        {
+          "name": "[BPSC5] Multi currency package 6-10 currency",
+          "id": "546414001",
+          "price": 3848000,
+          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed package for 2.-5. currencies"
+        },
+        {
+          "name": "[BPSC5] Multi currency package 11-30 currency",
+          "id": "546415001",
+          "price": 15390000,
+          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed packages for 2.-5. and 6-10 currencies"
+        },
+        {
+          "name": "[BPSC5] Multi currency package > 30 currencies",
+          "id": "546416001",
+          "price": 0,
+          "description": "Processing of installed currencies in sequence. Only applies to available and released adaptations. Up to 60 currencies are possible, depending on the complexity of the adaptations."
+        },
+        {
+          "name": "[BPSC5] Mixed currency processing",
+          "id": "546417001",
+          "price": 4617000,
+          "description": "Processing of up to 10 currencies simultaneously if they are already installed in a multi-currency package."
+        }
+      ]
+    },
+    "Software Options": {
+      "Serial number reading": [
+        {
+          "name": "[BPSC5] Serial number reading",
+          "id": "518202001",
+          "price": 4617000,
+          "description": "Reads the serial number (SN) of banknotes incl. the possibility to either store it on the system or send the data as well as the image of the SN to a defined IP address or a connected USB stick."
+        },
+        {
+          "name": "[BPSC5] Serial number reading, comparison and consolidation",
+          "id": "533627001",
+          "price": 9234000,
+          "description": "Reads both serial number (SN) of banknotes (OCR) and compares them. If they are different, i.e. a suspected composed note the banknote will be sent to reject."
+        }
+      ],
+      "Special features": [
+        {
+          "name": "[BPSC5] Special commercial security features",
+          "id": "533626001",
+          "price": 7695000,
+          "description": "Some banknotes contain special features such as SICPATalk or have been inked by IBNS solutions. Many of such features can be detected, however require additional adaptation effort per currency."
+        }
+      ],
+      "Ticket reading": [
+        {
+          "name": "[BPSC5] Ticket reading",
+          "id": "518203001",
+          "price": 13851000,
+          "description": "Software function to read casino tickets by the sensor system and send data to a defined IP-address."
+        }
+      ],
+      "Deposit Processing": [
+        {
+          "name": "[BPSC5] Fast Deposit Processing (FDP)",
+          "id": "518201001",
+          "price": 0,
+          "description": "Software function to increase efficiency by 1-step process: The deposit data are entered via barcode-reader directly at the system, banknotes verified and sorted in one run, rejects are processed offline to finally balance the deposit."
+        },
+        {
+          "name": "[BPSC5] Headercard Deposit processing (HDP)",
+          "id": "527279001",
+          "price": 92340000,
+          "description": "Software function for increasing productivity by a 1-step process: Header cards and subsequent banknotes are recognized by the BPS C5 sensor; processing data are sent to a vault management SW such as Compass VMS on an external PC."
+        }
+      ],
+      "Sorting": [
+        {
+          "name": "[BPSC5] Dynamic sorting",
+          "id": "555259001",
+          "price": 12312000,
+          "description": "Banknotes are sorted dynamically into an available delivery stacker without singler stop: When a stacker is emptied, the sorting criteria for this stacker are reset, and this stacker is immediately available for any subsequent banknote with different sorting criteria."
+        }
+      ],
+      "Interfaces": [
+        {
+          "name": "[BPSC5] Video surveillance interface and SNTP",
+          "id": "518204001",
+          "price": 0,
+          "description": "XML report to connect the processing data of a particular deposit with the video stream of the surveillance supplier"
+        },
+        {
+          "name": "[BPSC5] BPS Config Optimizer",
+          "id": "549040001",
+          "price": 0,
+          "description": "External application for customer PC (Windows) to change operation modes and machine configuration (e.g. reports, stacker capacity)"
+        }
+      ]
+    },
+    "Service": {
+      "Activation": [
+        {
+          "name": "[BPSC5] Activation file creation",
+          "id": "546165001",
+          "price": 3420000,
+          "description": "In case an activation file creation is required not in combination with a hardware or software order, this service fee will be charged"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "BPSC2": {
+    "Models": [
+      {
+        "name": "BPS C2-2",
+        "id": "554926001",
+        "price": 68400000,
+        "description": "Two output compartments (2+1)"
+      },
+      {
+        "name": "BPS C2-3",
+        "id": "554927001",
+        "price": 83790000,
+        "description": "Three output compartments (3+1)"
+      },
+      {
+        "name": "BPS C2-4",
+        "id": "554928001",
+        "price": 107730000,
+        "description": "Four output compartments (4+1)"
+      }
+    ],
+    "Hardware Options": {
+      "External display": [
+        {
+          "name": "[BPSC2] External display - Model PD 7000",
+          "id": "527732001",
+          "price": 3160000,
+          "description": "TFT 7' LCD monitor, 20 characters by 3 lines, USB 2.0"
+        }
+      ],
+      "10\" GUI": [
+        {
+          "name": "[BPSC2] Optional 10\" display with high resolution GUI",
+          "id": "552782001",
+          "price": "see price in Spare Parts Catalogue",
+          "description": "Optional 10\" display with high resolution GUI (from R2.15 onwards)"
+        }
+      ],
+      "Thermal printer": [
+        {
+          "name": "[BPSC2] 2 inch, 58 mm RoN",
+          "id": "524105001",
+          "price": 1703000,
+          "description": "2 inch, 58 mm RoN"
+        },
+        {
+          "name": "[BPSC2] 3 inch, 80 mm, speed 250mm/sec",
+          "id": "524104001",
+          "price": 3415000,
+          "description": "3 inch, 80 mm, speed 250mm/sec, USB 2.0"
+        }
+      ],
+      "Barcode reader": [
+        {
+          "name": "[BPSC2] Barcode reader",
+          "id": "516004001",
+          "price": 2052000,
+          "description": "Required for FDP processing"
+        }
+      ],
+      "Uninterrupted power supply (UPS)": [
+        {
+          "name": "[BPSC2] UPS",
+          "id": "528216000",
+          "price": "on request",
+          "description": "Required for regions with frequent power failures"
+        }
+      ],
+      "GUI arm": [
+        {
+          "name": "[BPSC2] GUI arm - Standard",
+          "id": "547679001",
+          "price": 6549000,
+          "description": "The mounting kit allows to attach the GUI to the BPS C2 enclosure (from R2.10 to R2.12)"
+        },
+        {
+          "name": "[BPSC2] GUI arm - High resolution",
+          "id": "552709001",
+          "price": 6395000,
+          "description": "The mounting kit allows to attach the High resolution GUI to the BPS C2 enclosure (from R2.15 onwards)"
+        }
+      ],
+      "Stand": [
+        {
+          "name": "[BPSC2] GUI table stand with flexible angle adjustment",
+          "id": "552708001",
+          "price": 444000,
+          "description": "GUI table stand with flexible angle adjustment (only for high resolution GUI)"
+        }
+      ],
+      "Stacker cover": [
+        {
+          "name": "[BPSC2] Stacker cover",
+          "id": "531617001",
+          "price": 444000,
+          "description": "One per stacker"
+        }
+      ]
+    },
+    "Currency Adaptation": {
+      "Multi currency package 2 - 5 currency": [
+        {
+          "name": "[BPSC2] Multi currency package 2-5",
+          "id": "546413001",
+          "price": 5387000,
+          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations"
+        }
+      ],
+      "Multi currency package 6 - 10 currency": [
+        {
+          "name": "[BPSC2] Multi currency package 6-10",
+          "id": "546414001",
+          "price": 3848000,
+          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed package for 2-5 currencies"
+        }
+      ],
+      "Multi currency package 11 - 30 currency": [
+        {
+          "name": "[BPSC2] Multi currency package 11-30",
+          "id": "546415001",
+          "price": 15390000,
+          "description": "Processing of installed currencies in sequence. Applies only to available and released adaptations. This multi currency package requires the installed packages for 2-5, and 6-10 currencies"
+        }
+      ],
+      "Multi currency package > 30 currencies": [
+        {
+          "name": "[BPSC2] Multi currency package > 30",
+          "id": "546416001",
+          "price": "on request",
+          "description": "Processing of installed currencies in sequence. Only applies to available and released adaptations. Up to 60 currencies are possible, depending on the complexity of the adaptations"
+        }
+      ],
+      "Mixed currency processing": [
+        {
+          "name": "[BPSC2] Mixed currency processing",
+          "id": "546417001",
+          "price": 4617000,
+          "description": "Processing of up to 10 currencies simultaneously if they are already installed in a multi-currency package. Please note: Every combination needs to be tested upfront"
+        }
+      ]
+    },
+    "Software Options": {
+      "Special commercial security features": [
+        {
+          "name": "[BPSC2] Special commercial security features",
+          "id": "533626001",
+          "price": 7695000,
+          "description": "Some banknotes contain special features such as SICPA-Talk or have been issued by IBNS solutions. Many of such features can be detected. Licensing model: included in adaptation and per currency. This price is only valid for adaptations which have implemented the respective feature"
+        }
+      ],
+      "Ticket reading": [
+        {
+          "name": "[BPSC2] Ticket reading",
+          "id": "518203001",
+          "price": 13851000,
+          "description": "Software function to read casino tickets by the sensor system and send data to a defined IP-address. 4 configurations: - Mixed processing of tickets and banknotes. Please note: BPS Connect Casino for prepping and reconciliation as well as a PC are not included in the price"
+        }
+      ],
+      "Fast Deposit Processing (FDP)": [
+        {
+          "name": "[BPSC2] Fast Deposit Processing (FDP)",
+          "id": "528368001",
+          "price": "free of charge",
+          "description": "Software function to increase efficiency by 1-step process. The deposit data are entered via barcode reader directly at the system, banknotes are verified and sorted  in one run, rejects are processed offline to finally balance the deposit. Notice: A barcode reader is not included in the price and needs to be ordered separately. A license for cash management system is also not included in the price for the FDP option"
+        }
+      ],
+      "Serial number reading": [
+        {
+          "name": "[BPSC2] Serial number reading",
+          "id": "518202001",
+          "price": 4617000,
+          "description": "Reads the serial number (SN) of banknotes incl. the possibility to either store it on the system or send the data as well as the image of the SN to a defined IP address or a connected USB stick. The system can also look for a specific SN in a search list which is stored on the machine"
+        }
+      ],
+      "Serial number reading, comparison and consolidation": [
+        {
+          "name": "[BPSC2] Serial number reading, comparison and consolidation (SNR, data export)",
+          "id": "533627001",
+          "price": 9234000,
+          "description": "Reads both serial number (SN) of banknotes (OCR) and compares them. If they are different, i.e. a suspected composed note the banknote will be sent to reject. If both SNs are equal the banknote will be stacked, and data sent to a defined IP address or a connected USB stick. The system can also look for a specific SN in a search list which is stored on the machine"
+        }
+      ],
+      "Video surveillance interface and SNTP": [
+        {
+          "name": "[BPSC2] Video surveillance interface and SNTP",
+          "id": "518204001",
+          "price": "free of charge",
+          "description": "XML report to connect the processing data of a particular deposit with the video stream of the surveillance supplier"
+        }
+      ],
+      "BPS Config Optimizer": [
+        {
+          "name": "[BPSC2] BPS Config Optimizer",
+          "id": "549040001",
+          "price": "free of charge",
+          "description": "External application for customer PC (Windows) to change operation modes and machine configuration (e.g. reports, stacker capacity)"
+        }
+      ]
+    }
+  }
+}

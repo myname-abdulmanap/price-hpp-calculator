@@ -1,0 +1,184 @@
+{
+  "BPSC6": {
+    "Models": [
+      {
+        "name": "BPS C6-4",
+        "id": "539471001",
+        "price": 253090000,
+        "description": "BPS C6 with 4 output stackers (including one pre-defined currency adaptation)"
+      },
+      {
+        "name": "BPS C6-8",
+        "id": "527671011",
+        "price": 359140000,
+        "description": "BPS C6 with 8 output stackers (including one pre-defined currency adaptation)"
+      }
+    ],
+    "Hardware Options": {
+      "Extension Module EX4": [
+        {
+          "name": "[BPSC6] Upgrade BPS C6-4 HW 2.0 to BPS C6-8 HW 2.0",
+          "id": "527689000",
+          "price": 119700000,
+          "description": "Upgrade of BPS C6-4 HW 2.0 to BPS C6-8 HW 2.0"
+        },
+        {
+          "name": "[BPSC6] Upgrade BPS C6-4 HW 3.0 to BPS C6-8 HW 3.0",
+          "id": "539477001",
+          "price": 119700000,
+          "description": "Upgrade of BPS C6-4 HW 3.0 to BPS C6-8 HW 3.0"
+        }
+      ],
+      "Connection kit": [
+        {
+          "name": "[BPSC6] Connection kit HW 2.0",
+          "id": "527688000",
+          "price": 16929000,
+          "description": "BPS C6-4 upgrade HW 1.0 to HW 2.0 for connecting Extension Modules HW 2.0"
+        },
+        {
+          "name": "[BPSC6] Connection kit HW 3.0",
+          "id": "543545001",
+          "price": 33858000,
+          "description": "BPS C6-4 upgrade HW 1.0 / HW 2.0 to HW 3.0 for connecting Extension Modules HW 3.0"
+        }
+      ],
+      "Printer": [
+        {
+          "name": "[BPSC6] Printer - ESYPOS",
+          "id": "524104001",
+          "price": 3283000,
+          "description": "3 inch, 80 mm, speed 250mm/sec, USB 2.0 (ESYPOS)"
+        },
+        {
+          "name": "[BPSC6] Printer - BIXOLON",
+          "id": "532504001",
+          "price": 5472000,
+          "description": "3 inch, 80mm, speed 300 mm/sec, USB 2.0 (BIXOLON), supports error handling, i.e. paper end or cover open"
+        }
+      ],
+      "Barcode scanner": [
+        {
+          "name": "[BPSC6] Barcode scanner",
+          "id": "516604001",
+          "price": 2052000,
+          "description": "Handheld scanner for barcodes on safebags"
+        }
+      ]
+    },
+    "Software Options": {
+      "Currency adaptation": [
+        {
+          "name": "[BPSC6] License 2 currencies",
+          "id": "529415000",
+          "price": 10602000,
+          "description": "License for 2 currencies"
+        },
+        {
+          "name": "[BPSC6] License 3 currencies",
+          "id": "529417000",
+          "price": 13338000,
+          "description": "License for 3 currencies"
+        },
+        {
+          "name": "[BPSC6] License 4 currencies",
+          "id": "534481000",
+          "price": 16074000,
+          "description": "License for 4 currencies"
+        },
+        {
+          "name": "[BPSC6] License 5 currencies",
+          "id": "534482000",
+          "price": 18810000,
+          "description": "License for 5 currencies"
+        },
+        {
+          "name": "[BPSC6] License 6 currencies",
+          "id": "534483000",
+          "price": 21546000,
+          "description": "License for 6 currencies"
+        },
+        {
+          "name": "[BPSC6] License 7 currencies",
+          "id": "534484000",
+          "price": 22914000,
+          "description": "License for 7 currencies"
+        },
+        {
+          "name": "[BPSC6] License 8 currencies",
+          "id": "534485000",
+          "price": 24282000,
+          "description": "License for 8 currencies"
+        },
+        {
+          "name": "[BPSC6] License 9 currencies",
+          "id": "534486000",
+          "price": 25650000,
+          "description": "License for 9 currencies"
+        },
+        {
+          "name": "[BPSC6] License 10 currencies",
+          "id": "534487000",
+          "price": 27018000,
+          "description": "License for 10 currencies"
+        },
+        {
+          "name": "[BPSC6] License 11-15 currencies",
+          "id": "534488000",
+          "price": 34713000,
+          "description": "License for 11-15 currencies"
+        },
+        {
+          "name": "[BPSC6] License 16-20 currencies",
+          "id": "534489000",
+          "price": 39843000,
+          "description": "License for 16-20 currencies"
+        },
+        {
+          "name": "[BPSC6] License 21-30 currencies",
+          "id": "534490000",
+          "price": 46341000,
+          "description": "License for 21-30 currencies"
+        },
+        {
+          "name": "[BPSC6] License 31-40 currencies",
+          "id": "534491000",
+          "price": 63270000,
+          "description": "License for 31-40 currencies"
+        },
+        {
+          "name": "[BPSC6] Upgrade up to 5 additional currencies",
+          "id": "534492000",
+          "price": 42750000,
+          "description": "Upgrade up to 5 additional currencies"
+        },
+        {
+          "name": "[BPSC6] Upgrade up to 10 additional currencies",
+          "id": "534493000",
+          "price": 76950000,
+          "description": "Upgrade up to 10 additional currencies"
+        },
+        {
+          "name": "[BPSC6] Additional fee for Mixed currency processing up to 10 currencies",
+          "id": "552650000",
+          "price": 8550000,
+          "description": "Additional fee for Mixed currency processing up to 10 currencies if the licenses are already ordered for processing in sequence"
+        },
+        {
+          "name": "[BPSC6] Additional fee for Mixed currency processing > 10 currencies",
+          "id": "552651000",
+          "price": 15390000,
+          "description": "Additional fee for Mixed currency processing > 10 currencies (max. 40 currencies) if the licenses are already ordered for processing in sequence"
+        }
+      ],
+      "Interfaces": [
+        {
+          "name": "[BPSC6] Video surveillance interface and SNTP",
+          "id": "518204001",
+          "price": 1710000,
+          "description": "XML report to connect the processing data of a particular deposit with the video stream of the surveillance supplier"
+        }
+      ]
+    }
+  }
+}

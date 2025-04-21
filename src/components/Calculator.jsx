@@ -7,14 +7,20 @@ import * as XLSX from "xlsx";
 
 // Import JSON data
 import ProNoteData from "../data/ProNote.json";
-import BPSData from "../data/BPS.json";
+import BPSC1Data from "../data/BPS.json";
+import BPSC2Data from "../data/BPSC2.json";
+import BPSC5Data from "../data/BPSC5.json";
+import BPSC6Data from "../data/BPSC6.json";
 import CompassData from "../data/CompassAssetManager.json";
 import IndonesiaCities from "../data/IndonesiaCities.json";
 
 function Calculator() {
   const [selectedProductLine, setSelectedProductLine] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedModel, setSelectedModel] = useState(null);
+  const [selectedAdditionalCategory, setSelectedAdditionalCategory] =
+    useState("");
+  const [selectedAdditionalType, setSelectedAdditionalType] = useState(""); // New state for additional type
+  const [selectedAdditionalItem, setSelectedAdditionalItem] = useState(null);
   const [items, setItems] = useState([]);
   const [laborCost, setLaborCost] = useState(0);
   const [rentCost, setRentCost] = useState(0);
@@ -92,14 +98,22 @@ function Calculator() {
 
   // Reset dependent dropdowns when product line changes
   useEffect(() => {
-    setSelectedCategory("");
     setSelectedModel(null);
+    setSelectedAdditionalCategory("");
+    setSelectedAdditionalType(""); // Reset type as well
+    setSelectedAdditionalItem(null);
   }, [selectedProductLine]);
 
-  // Reset model when category changes
+  // Reset additional type and item when additional category changes
   useEffect(() => {
-    setSelectedModel(null);
-  }, [selectedCategory]);
+    setSelectedAdditionalType("");
+    setSelectedAdditionalItem(null);
+  }, [selectedAdditionalCategory]);
+
+  // Reset additional item when additional type changes
+  useEffect(() => {
+    setSelectedAdditionalItem(null);
+  }, [selectedAdditionalType]);
 
   // Reset city when province changes
   useEffect(() => {
@@ -109,42 +123,149 @@ function Calculator() {
 
   // Product line dropdown options
   const productLines = Object.keys(ProNoteData).concat(
-    Object.keys(BPSData),
+    Object.keys(BPSC1Data),
+    Object.keys(BPSC2Data),
+    Object.keys(BPSC5Data),
+    Object.keys(BPSC6Data),
     Object.keys(CompassData)
   );
 
-  // Get categories for selected product line
-  const getCategoriesForProductLine = () => {
+  // Get all models for selected product line
+  const getModelsForProductLine = () => {
     switch (selectedProductLine) {
       case "ProNote":
-        return ["Models", "ExternalDisplays", "Printers", "AdditionalOptions"];
-      case "BPS":
-        return Object.keys(BPSData.BPS);
+        return ProNoteData.ProNote.Models || [];
+      case "BPSC1":
+        return BPSC1Data.BPSC1.Models || [];
+      case "BPSC2":
+        return BPSC2Data.BPSC2.Models || [];
+      case "BPSC5":
+        return BPSC5Data.BPSC5.Models || [];
+      case "BPSC6":
+        return BPSC6Data.BPSC6.Models || [];
+
       case "CompassAssetManager":
-        return ["Subscriptions"];
+        // Assuming Compass models are in Subscriptions
+        return CompassData.CompassAssetManager.Subscriptions || [];
       default:
         return [];
     }
   };
 
-  // Get models for selected category
-  const getModelsForCategory = () => {
-    if (!selectedProductLine || !selectedCategory) return [];
-
+  // Get additional categories for selected product line
+  const getAdditionalCategories = () => {
     switch (selectedProductLine) {
       case "ProNote":
-        return ProNoteData.ProNote[selectedCategory] || [];
-      case "BPS":
-        return BPSData.BPS[selectedCategory]?.Models || [];
+        return ["Hardware Options"];
+    
+      case "BPSC1":
+        return ["Hardware Options", "Currency Adaptation", "Software Options", "Service"];
+
+      case "BPSC2":
+        return ["Hardware Options", "Currency Adaptation", "Software Options"];
+      case "BPSC5":
+        return ["Hardware Options", "Service", "Software Options"];
+     
+      case "BPSC6":
+        return ["Hardware Options", "Service", "Software Options"];
+     
       case "CompassAssetManager":
-        return CompassData.CompassAssetManager[selectedCategory] || [];
+        return ["-"];
       default:
         return [];
     }
   };
 
-  // Add item to list
-  const addItem = () => {
+  // Get additional types for selected category
+  const getAdditionalTypesForCategory = () => {
+    if (!selectedProductLine || !selectedAdditionalCategory) return [];
+
+    // Access the appropriate data source based on product line
+    let data;
+    switch (selectedProductLine) {
+      case "ProNote":
+        data = ProNoteData.ProNote;
+        break;
+
+      case "BPSC1":
+        data = BPSC1Data.BPSC1;
+        break;
+
+        case "BPSC2":
+          data = BPSC2Data.BPSC2;
+          break;
+        case "BPSC5":
+          data = BPSC5Data.BPSC5;
+          break;
+        case "BPSC6":
+          data = BPSC6Data.BPSC6;
+          break;
+
+
+      case "CompassAssetManager":
+        data = CompassData.CompassAssetManager;
+        break;
+      default:
+        return [];
+    }
+
+    // Get the category data
+    const categoryData = data[selectedAdditionalCategory];
+
+    if (!categoryData) return [];
+
+    // If the category data is an object (not an array), return its keys as types
+    if (typeof categoryData === "object" && !Array.isArray(categoryData)) {
+      return Object.keys(categoryData);
+    }
+
+    return [];
+  };
+
+  // Get additional items for selected type
+  const getAdditionalItemsForType = () => {
+    if (
+      !selectedProductLine ||
+      !selectedAdditionalCategory ||
+      !selectedAdditionalType
+    )
+      return [];
+
+    // Access the appropriate data source based on product line
+    let data;
+    switch (selectedProductLine) {
+      case "ProNote":
+        data = ProNoteData.ProNote;
+        break;
+      case "BPSC1":
+        data = BPSC1Data.BPSC1;
+        break;
+      case "BPSC2":
+        data = BPSC2Data.BPSC2;
+        break;
+      case "BPSC5":
+        data = BPSC5Data.BPSC5;
+        break;
+      case "BPSC6":
+        data = BPSC6Data.BPSC6;
+        break;
+      case "CompassAssetManager":
+        data = CompassData.CompassAssetManager;
+        break;
+      default:
+        return [];
+    }
+
+    // Try to get items from the nested type within the category
+    const categoryData = data[selectedAdditionalCategory];
+    if (!categoryData) return [];
+
+    const typeItems = categoryData[selectedAdditionalType];
+    return Array.isArray(typeItems) ? typeItems : [];
+  };
+
+  // Add model to list
+  const addModel = () => {
     if (selectedModel) {
       // Check if the model is already in the list
       const isModelAlreadyAdded = items.some(
@@ -165,6 +286,28 @@ function Calculator() {
     }
   };
 
+  // Add additional item to list
+  const addAdditionalItem = () => {
+    if (selectedAdditionalItem) {
+      // Check if the additional item is already in the list
+      const isItemAlreadyAdded = items.some(
+        (item) => item.id === selectedAdditionalItem.id
+      );
+
+      if (!isItemAlreadyAdded) {
+        setItems([
+          ...items,
+          {
+            ...selectedAdditionalItem,
+            price: selectedAdditionalItem.price,
+          },
+        ]);
+      } else {
+        alert("Item ini sudah ditambahkan sebelumnya.");
+      }
+    }
+  };
+
   // Remove item from list
   const removeItem = (indexToRemove) => {
     setItems(items.filter((_, index) => index !== indexToRemove));
@@ -177,8 +320,7 @@ function Calculator() {
   );
   const totalHPP = totalMaterialCost + Number(laborCost) + Number(rentCost);
   const sellingPrice =
-  (totalHPP / (1 - profitMargin / 100)) + Number(shippingCost);
-
+    totalHPP / (1 - profitMargin / 100) + Number(shippingCost);
 
   // Get provinces
   const provinces = Object.keys(IndonesiaCities);
@@ -230,7 +372,6 @@ function Calculator() {
     ]);
 
     // Add product table
-
     autoTable(doc, {
       head: [["Nama", "Deskripsi", "Harga (Rp)"]],
       body: tableData,
@@ -242,9 +383,6 @@ function Calculator() {
       headStyles: {
         fillColor: [66, 66, 66],
       },
-      // didDrawPage: function (data) {
-      //   // Kosongkan atau hapus bagian ini dulu
-      // }
     });
 
     const pageCount = doc.getNumberOfPages();
@@ -421,16 +559,16 @@ function Calculator() {
         <div className="calculator-layout">
           {/* Product Selection Section */}
           <div className="selection-column">
-            <h3>Pilih Produk</h3>
+            <h3>System</h3>
             <div className="configurator-grid">
               {/* Product Line Dropdown */}
               <div className="input-group">
-                <label>Pilih Produk / Mesin</label>
+                <label>Machine</label>
                 <select
                   value={selectedProductLine}
                   onChange={(e) => setSelectedProductLine(e.target.value)}
                 >
-                  <option value="">Pilih Produk</option>
+                  <option value="">Machine Type</option>
                   {productLines.map((line) => (
                     <option key={line} value={line}>
                       {line}
@@ -439,16 +577,40 @@ function Calculator() {
                 </select>
               </div>
 
-              {/* Category Dropdown */}
+              {/* Model Dropdown - Direct from product line */}
               <div className="input-group">
-                <label>Pilih Kategori</label>
+                <label>Model</label>
                 <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  value={selectedModel ? selectedModel.id : ""}
+                  onChange={(e) => {
+                    const model = getModelsForProductLine().find(
+                      (m) => m.id === e.target.value
+                    );
+                    setSelectedModel(model);
+                  }}
                   disabled={!selectedProductLine}
                 >
-                  <option value="">Pilih Kategori</option>
-                  {getCategoriesForProductLine().map((category) => (
+                  <option value="">Choose Model</option>
+                  {getModelsForProductLine().map((model) => (
+                    <option key={model.id} value={model.id}>
+                      {model.name} - Rp {model.price.toLocaleString()}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Additional Category Dropdown */}
+              <div className="input-group">
+                <label>Additional Options</label>
+                <select
+                  value={selectedAdditionalCategory}
+                  onChange={(e) =>
+                    setSelectedAdditionalCategory(e.target.value)
+                  }
+                  disabled={!selectedProductLine}
+                >
+                  <option value="">Select Additional Category</option>
+                  {getAdditionalCategories().map((category) => (
                     <option key={category} value={category}>
                       {category}
                     </option>
@@ -456,90 +618,115 @@ function Calculator() {
                 </select>
               </div>
 
-              {/* Model Dropdown */}
+              {/* Additional Type Dropdown - NEW DROPDOWN */}
               <div className="input-group">
-                <label>Pilih Model</label>
+                <label>Additional Type</label>
                 <select
-                  value={selectedModel ? selectedModel.id : ""}
-                  onChange={(e) => {
-                    const model = getModelsForCategory().find(
-                      (m) => m.id === e.target.value
-                    );
-                    setSelectedModel(model);
-                  }}
-                  disabled={!selectedCategory}
+                  value={selectedAdditionalType}
+                  onChange={(e) => setSelectedAdditionalType(e.target.value)}
+                  disabled={!selectedAdditionalCategory}
                 >
-                  <option value="">Pilih Model</option>
-                  {getModelsForCategory().map((model) => (
-                    <option key={model.id} value={model.id}>
-                      {model.name} - Rp {model.price.toLocaleString()}
+                  <option value="">Select Type</option>
+                  {getAdditionalTypesForCategory().map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Additional Item Dropdown - Now dependent on Type */}
+              <div className="input-group">
+                <label>Additional Item</label>
+                <select
+                  value={
+                    selectedAdditionalItem ? selectedAdditionalItem.id : ""
+                  }
+                  onChange={(e) => {
+                    const item = getAdditionalItemsForType().find(
+                      (i) => i.id === e.target.value
+                    );
+                    setSelectedAdditionalItem(item);
+                  }}
+                  disabled={!selectedAdditionalType}
+                >
+                  <option value="">Choose Item</option>
+                  {getAdditionalItemsForType().map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.name} - Rp {item.price.toLocaleString()}
                     </option>
                   ))}
                 </select>
               </div>
             </div>
 
-            {/* Product Description Section - Added new section */}
+            {/* Add Model Button */}
+            {selectedModel && (
+              <div className="input-group">
+                <button onClick={addModel} className="add-button">
+                  Add Machine Model
+                </button>
+              </div>
+            )}
+
+            {/* Add Additional Item Button */}
+            {selectedAdditionalItem && (
+              <div className="input-group">
+                <button onClick={addAdditionalItem} className="add-button">
+                  Add Additional Item
+                </button>
+              </div>
+            )}
+
+            {/* Product Description Section */}
             {selectedModel && selectedModel.description && (
               <div className="description-container">
-                <h4>Deskripsi Produk</h4>
+                <h4>Model Description</h4>
                 <p>{selectedModel.description}</p>
               </div>
             )}
 
-            {/* Tambah Produk Button */}
-            {selectedModel && (
-              <div className="input-group">
-                <button onClick={addItem} className="add-button">
-                  Tambah Produk
-                </button>
+            {selectedAdditionalItem && selectedAdditionalItem.description && (
+              <div className="description-container">
+                <h4>Additional Item</h4>
+                <p>{selectedAdditionalItem.description}</p>
               </div>
             )}
           </div>
 
           {/* Cost & Shipping Section */}
           <div className="cost-column">
-            <h3>Biaya & Pengiriman</h3>
+            <h3>Additional Costs</h3>
             <div className="configurator-grid">
               {/* Cost Inputs */}
               <div className="input-group">
-                <label>Biaya Tenaga Kerja (Rp):</label>
+                <label>Labor Cost (Rp):</label>
                 <input
                   type="number"
                   value={laborCost}
                   onChange={(e) => setLaborCost(e.target.value)}
-                  placeholder="Masukkan biaya tenaga kerja"
+                  placeholder="Enter labor cost"
                 />
               </div>
 
               <div className="input-group">
-                <label>Biaya Sewa (Rp):</label>
+                <label>Rental Cost (Rp):</label>
                 <input
                   type="number"
                   value={rentCost}
                   onChange={(e) => setRentCost(e.target.value)}
-                  placeholder="Masukkan biaya sewa"
-                />
-              </div>
-
-              <div className="input-group">
-                <label>Margin Keuntungan (%):</label>
-                <input
-                  type="number"
-                  value={profitMargin}
-                  onChange={(e) => setProfitMargin(e.target.value)}
-                  placeholder="Masukkan persentase keuntungan"
+                  placeholder="Enter rental cost"
                 />
               </div>
 
               {/* Shipping Province Dropdown */}
               <div className="input-group">
-                <label>Pilih Provinsi</label>
+                <label>Select Province</label>
                 <select
                   value={selectedProvince}
                   onChange={(e) => setSelectedProvince(e.target.value)}
                 >
-                  <option value="">Pilih Provinsi</option>
+                  <option value="">Select Province</option>
                   {provinces.map((province) => (
                     <option key={province} value={province}>
                       {province}
@@ -550,7 +737,7 @@ function Calculator() {
 
               {/* Shipping City Dropdown */}
               <div className="input-group">
-                <label>Pilih Kota</label>
+                <label>Select City</label>
                 <select
                   value={selectedCity}
                   onChange={(e) => {
@@ -571,7 +758,7 @@ function Calculator() {
                   }}
                   disabled={!selectedProvince}
                 >
-                  <option value="">Pilih Kota</option>
+                  <option value="">Select City</option>
                   {getCitiesForProvince().map((city) => (
                     <option key={city.name} value={city.name}>
                       {city.name}
@@ -585,14 +772,14 @@ function Calculator() {
           {/* Products List Section - Spans both columns */}
           {items.length > 0 && (
             <div className="table-container">
-              <h3>Daftar Produk</h3>
+              <h3>Product List</h3>
               <table>
                 <thead>
                   <tr>
-                    <th>Nama</th>
-                    <th>Deskripsi</th>
-                    <th>Harga (Rp)</th>
-                    <th>Aksi</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price (Rp)</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -606,34 +793,82 @@ function Calculator() {
                           onClick={() => removeItem(index)}
                           className="remove-button"
                         >
-                          Hapus
+                          Remove
                         </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-
-              {/* Export Buttons - Added below table */}
-              <div className="export-buttons">
-                <button
-                  onClick={exportToPDF}
-                  className="export-button pdf-button"
-                >
-                  <span className="button-icon">📄</span> Export ke PDF
-                </button>
-                <button
-                  onClick={exportToExcel}
-                  className="export-button excel-button"
-                >
-                  <span className="button-icon">📊</span> Export ke Excel
-                </button>
-              </div>
             </div>
           )}
 
+          {/* Profit Margin Input - Moved here after product list */}
+          <div className="margin-section">
+            <h3>Profit Settings</h3>
+            <div className="input-group profit-margin-input">
+              <label>Profit Margin (%):</label>
+              <input
+                type="number"
+                value={profitMargin}
+                onChange={(e) => setProfitMargin(e.target.value)}
+                placeholder="Enter profit percentage"
+              />
+            </div>
+          </div>
+
+          {/* Cost Summary Section - Added after profit margin */}
+         {/* Cost Summary Section - Enhanced styling */}
+<div className="cost-summary-section">
+  <h3>Cost Summary</h3>
+  <div className="cost-summary-container">
+    <div className="cost-summary-grid">
+      <div className="summary-item">
+        <div className="summary-label">Total Material Cost:</div>
+        <div className="summary-value">Rp {totalMaterialCost.toLocaleString()}</div>
+      </div>
+      <div className="summary-item">
+        <div className="summary-label">Labor Cost:</div>
+        <div className="summary-value">Rp {Number(laborCost).toLocaleString()}</div>
+      </div>
+      <div className="summary-item">
+        <div className="summary-label">Rental Cost:</div>
+        <div className="summary-value">Rp {Number(rentCost).toLocaleString()}</div>
+      </div>
+      <div className="summary-item highlight">
+        <div className="summary-label">COGS (HPP):</div>
+        <div className="summary-value">Rp {totalHPP.toLocaleString()}</div>
+      </div>
+      <div className="summary-item">
+        <div className="summary-label">Shipping Cost:</div>
+        <div className="summary-value">Rp {shippingCost.toLocaleString()}</div>
+      </div>
+    </div>
+
+    {/* Export Buttons - Moved below cost summary */}
+    {items.length > 0 && (
+            <div className="export-buttons">
+              <button
+                onClick={exportToPDF}
+                className="export-button pdf-button"
+              >
+                <span className="button-icon">📄</span> Export to PDF
+              </button>
+              <button
+                onClick={exportToExcel}
+                className="export-button excel-button"
+              >
+                <span className="button-icon">📊</span> Export to Excel
+              </button>
+            </div>
+          )}
+
+  </div>
+</div>
+
+          
           {/* Main content padding to ensure content isn't hidden behind the sticky footer */}
-          <div style={{ paddingBottom: "230px" }}>
+          <div style={{ paddingBottom: "120px" }}>
             <button className="logout-button" onClick={handleLogout}>
               Logout
             </button>
@@ -641,21 +876,11 @@ function Calculator() {
         </div>
       </div>
 
-      {/* Sticky Results Section that's always visible */}
+      {/* Sticky Results Section that only shows selling price */}
       <div id="stickyResults" className="sticky-results">
         <div className="results-grid">
-          <div className="result-item">
-            <div className="result-label">HPP:</div>
-            <div className="result-value">Rp {totalHPP.toLocaleString()}</div>
-          </div>
-          <div className="result-item">
-            <div className="result-label">Biaya Pengiriman:</div>
-            <div className="result-value">
-              Rp {shippingCost.toLocaleString()}
-            </div>
-          </div>
           <div className="result-item result-highlight">
-            <div className="result-label">Harga Jual:</div>
+            <div className="result-label">Selling Price:</div>
             <div className="result-value">
               Rp {sellingPrice.toLocaleString()}
             </div>
@@ -665,5 +890,7 @@ function Calculator() {
     </div>
   );
 }
+
+
 
 export default Calculator;

@@ -14,33 +14,36 @@
         "description": "Counting, sorting, counterfeit detection, fitness checking incl. Adaptation package No. 3 - South East Asia"
       }
     ],
-    "ExternalDisplays": [
-      {
-        "id": "ED-101",
-        "name": "1-row external LED Display for pieces only",
-        "price": 376000,
-        "description": "External LED display showing piece count only"
-      },
-      {
-        "id": "ED-103",
-        "name": "One-sided external LED Display",
-        "price": 735000,
-        "description": "3 lines (4+4+8 digits), red light"
-      },
-      {
-        "id": "ED-203",
-        "name": "Two-sided external LED Display",
-        "price": 1029000,
-        "description": "side A: 3 lines (4+4+8 digits); side B: 2 lines (4+4+8 digits), red light"
-      }
-    ],
-    "Printers": [
-      {
-        "id": "TP-100",
-        "name": "Thermal printer",
-        "price": 1235000,
-        "description": "External thermal printer for ProNote 300/ProNote 330/ProNote 1.5/ProNote 1.5F"
-      }
-    ]
+   
+    "Hardware Options": {
+      "External Display": [
+        {
+          "id": "ED-100",
+          "name": "[PRONOTE] 1-row external LED Display for pieces only",
+          "price": 376000,
+          "description": "1-row external LED Display for pieces only"
+        },
+        {
+          "id": "ED-200",
+          "name": "[PRONOTE] One-sided external LED Display",
+          "price": 735000,
+          "description": "3 line (4+4+8 digits), red light"
+        },
+        {
+          "id": "ED-300",
+          "name": "[PRONOTE] Two-sided external LED Display",
+          "price": 1029000,
+          "description": "side A: 3 line (4+4+8 digits); side B: 2 line (4+4+8 digits), red light"
+        }
+      ],
+      "Thermal Printer": [
+        {
+          "id": "TP-100",
+          "name": "[PRONOTE] Thermal printer",
+          "price": 1235000,
+          "description": "External thermal printer for ProNote 300/ProNote 330/ProNote 1.5/ProNote 1.5F"
+        }
+      ]
+    }
   }
 }
