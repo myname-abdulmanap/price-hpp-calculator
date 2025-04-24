@@ -1069,17 +1069,21 @@ tr:hover {
 .export-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
+  gap: 4px; 
+  margin-top: 15px;
 }
 
 .export-button {
-  padding: 10px 20px;
+  padding: 2px 6px;   
+  font-size: 10px;      
   border: none;
-  border-radius: 6px;
-  font-weight: 600;
+  border-radius: 3px;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .export-button:hover {
