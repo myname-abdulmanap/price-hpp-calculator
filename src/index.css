@@ -135,10 +135,9 @@ h3 {
 /* Modernized container */
 .container {
   width: 100%;
-  max-width: 1100px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   background: var(--container-bg);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 16px;
   box-shadow: 0 10px 30px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease, 
@@ -147,10 +146,7 @@ h3 {
   box-sizing: border-box;
 }
 
-.container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px var(--shadow-color);
-}
+
 
 /* Grid layout for form sections */
 .configurator-grid {
@@ -867,4 +863,351 @@ tr:hover {
   .summary-item {
     padding: 10px 12px;
   }
+}
+
+
+/* Card-based Cost Summary Styling */
+.cost-summary-section {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.cost-summary-section h3 {
+  margin-bottom: 20px;
+  color: var(--heading-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.cost-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.cost-card {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.cost-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cost-card.primary {
+  background-color: var(--primary-color-light);
+  border-left: 4px solid var(--primary-color);
+}
+
+.cost-card-icon {
+  font-size: 24px;
+  margin-right: 16px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  border-radius: 50%;
+}
+
+.cost-card-content {
+  flex: 1;
+}
+
+.cost-card-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.cost-card-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cost-card.primary .cost-card-value {
+  color: var(--primary-color-dark);
+}
+
+/* Dark theme adjustments */
+.dark-theme .cost-card {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .cost-card.primary {
+  background-color: rgba(var(--primary-color-rgb), 0.15);
+}
+
+.dark-theme .cost-card-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Make the cost cards responsive */
+@media (max-width: 768px) {
+  .cost-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cost-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Selling price specific styles - make it more compact */
+.selling-price-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 300px; /* Limit the width */
+}
+
+.selling-price-card {
+  background-color: var(--card-bg-color, #f0f0f0);
+  border: 2px solid var(--accent-color, #4a90e2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  width: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.selling-price-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.selling-price-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.selling-price-content {
+  flex: 1;
+}
+
+.selling-price-label {
+  font-size: 14px;
+  color: var(--text-secondary-color, #666);
+  font-weight: 500;
+}
+
+.selling-price-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-color, #4a90e2);
+  margin-top: 4px;
+}
+
+/* Manual price input for zero-price items */
+.price-note {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary-color, #666);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* General cost cards styles */
+.cost-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cost-card {
+  background-color: var(--card-bg-color, #f0f0f0);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cost-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cost-card-icon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.cost-card-content {
+  flex: 1;
+}
+
+.cost-card-label {
+  font-size: 13px;
+  color: var(--text-secondary-color, #666);
+}
+
+.cost-card-value {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Export buttons */
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.export-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.export-button:hover {
+  transform: translateY(-2px);
+}
+
+.pdf-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.excel-button {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* Dark mode adjustments */
+.dark-theme .selling-price-card {
+  background-color: #2a2a2a;
+  border-color: #5a9cf0;
+}
+
+.dark-theme .selling-price-value {
+  color: #5a9cf0;
+}
+
+.dark-theme .cost-card {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .cost-card-label,
+.dark-theme .selling-price-label,
+.dark-theme .price-note {
+  color: #aaa;
+}
+
+/* Improved Sticky Selling Price Styles */
+.sticky-selling-price-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  pointer-events: none; /* Allow interaction with elements behind initially */
+}
+
+.sticky-selling-price {
+  background: linear-gradient(to right, #ffffff, #f1f1f1);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px 20px;
+  pointer-events: auto; /* Re-enable pointer events for this element */
+}
+
+.selling-price-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selling-price-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.selling-price-label {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.selling-price-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.export-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.export-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-button {
+  background-color: #ff5252;
+  color: white;
+}
+
+.pdf-button:hover {
+  background-color: #ff3838;
+  transform: translateY(-2px);
+}
+
+.excel-button {
+  background-color: #33d9b2;
+  color: white;
+}
+
+.excel-button:hover {
+  background-color: #20c997;
+  transform: translateY(-2px);
+}
+
+/* Dark mode adjustments */
+.dark-theme .sticky-selling-price {
+  background: linear-gradient(to right, #383839, #1a1919);
+}
+
+/* Add padding to the body to prevent content from being covered by the sticky bar */
+body {
+  padding-bottom: 80px !important;
+}
+
+/* Ensure app-wrapper also has bottom padding */
+.app-wrapper {
+  padding-bottom: 80px !important;
 }

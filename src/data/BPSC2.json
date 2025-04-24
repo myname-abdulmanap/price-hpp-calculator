@@ -159,7 +159,7 @@
       ],
       "Fast Deposit Processing (FDP)": [
         {
-          "name": "[BPSC2] Fast Deposit Processing (FDP)",
+          "name": "[BPSC2] Fast Deposit Processing (FDP), free of charge",
           "id": "528368001",
           "price": "free of charge",
           "description": "Software function to increase efficiency by 1-step process. The deposit data are entered via barcode reader directly at the system, banknotes are verified and sorted  in one run, rejects are processed offline to finally balance the deposit. Notice: A barcode reader is not included in the price and needs to be ordered separately. A license for cash management system is also not included in the price for the FDP option"
@@ -183,17 +183,17 @@
       ],
       "Video surveillance interface and SNTP": [
         {
-          "name": "[BPSC2] Video surveillance interface and SNTP",
+          "name": "[BPSC2] Video surveillance interface and SNTP, free of charge",
           "id": "518204001",
-          "price": "free of charge",
+          "price": "0",
           "description": "XML report to connect the processing data of a particular deposit with the video stream of the surveillance supplier"
         }
       ],
       "BPS Config Optimizer": [
         {
-          "name": "[BPSC2] BPS Config Optimizer",
+          "name": "[BPSC2] BPS Config Optimizer, free of charge",
           "id": "549040001",
-          "price": "free of charge",
+          "price": "0",
           "description": "External application for customer PC (Windows) to change operation modes and machine configuration (e.g. reports, stacker capacity)"
         }
       ]

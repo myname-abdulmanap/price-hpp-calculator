@@ -12,14 +12,13 @@ import BPSC2Data from "../data/BPSC2.json";
 import BPSC5Data from "../data/BPSC5.json";
 import BPSC6Data from "../data/BPSC6.json";
 import CompassData from "../data/CompassAssetManager.json";
-import IndonesiaCities from "../data/IndonesiaCities.json";
 
 function Calculator() {
   const [selectedProductLine, setSelectedProductLine] = useState("");
   const [selectedModel, setSelectedModel] = useState(null);
   const [selectedAdditionalCategory, setSelectedAdditionalCategory] =
     useState("");
-  const [selectedAdditionalType, setSelectedAdditionalType] = useState(""); // New state for additional type
+  const [selectedAdditionalType, setSelectedAdditionalType] = useState("");
   const [selectedAdditionalItem, setSelectedAdditionalItem] = useState(null);
   const [items, setItems] = useState([]);
   const [laborCost, setLaborCost] = useState(0);
@@ -30,10 +29,14 @@ function Calculator() {
     return savedDarkMode !== null ? savedDarkMode === "true" : false;
   });
 
-  // Shipping state
-  const [selectedProvince, setSelectedProvince] = useState("");
-  const [selectedCity, setSelectedCity] = useState("");
+  // Manual price input for zero-price items
+  const [manualPrice, setManualPrice] = useState(0);
+  const [showManualPriceInput, setShowManualPriceInput] = useState(false);
+  const [priceNote, setPriceNote] = useState("");
+
+  // Shipping state - simplified to just manual input
   const [shippingCost, setShippingCost] = useState(0);
+  const [fullAddress, setFullAddress] = useState("");
 
   // Authentication state
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -54,6 +57,43 @@ function Calculator() {
       setIsAuthenticated(true);
     }
   }, []);
+  // Add this useEffect in your component to ensure the sticky selling price works consistently
+useEffect(() => {
+  // Make sure body has enough padding to not hide content
+  document.body.style.paddingBottom = "80px";
+  
+  // Force the sticky element to always be visible
+  const stickyElement = document.querySelector('.sticky-selling-price-container');
+  if (stickyElement) {
+    stickyElement.style.display = 'block';
+  }
+  
+  return () => {
+    // Cleanup when component unmounts
+    document.body.style.paddingBottom = "";
+  };
+}, []);
+
+  // Check if selected model or additional item has zero price
+  useEffect(() => {
+    if (selectedModel && selectedModel.price === 0) {
+      setShowManualPriceInput(true);
+      setPriceNote("Price on Catalog/Request");
+    } else {
+      setShowManualPriceInput(false);
+      setPriceNote("");
+    }
+  }, [selectedModel]);
+
+  useEffect(() => {
+    if (selectedAdditionalItem && selectedAdditionalItem.price === 0) {
+      setShowManualPriceInput(true);
+      setPriceNote("Price on Catalog/Request");
+    } else if (!selectedModel || selectedModel.price !== 0) {
+      setShowManualPriceInput(false);
+      setPriceNote("");
+    }
+  }, [selectedAdditionalItem, selectedModel]);
 
   const handleLogin = () => {
     const isUsernameMatch = bcrypt.compareSync(username, validUsername);
@@ -100,8 +140,11 @@ function Calculator() {
   useEffect(() => {
     setSelectedModel(null);
     setSelectedAdditionalCategory("");
-    setSelectedAdditionalType(""); // Reset type as well
+    setSelectedAdditionalType("");
     setSelectedAdditionalItem(null);
+    setManualPrice(0);
+    setShowManualPriceInput(false);
+    setPriceNote("");
   }, [selectedProductLine]);
 
   // Reset additional type and item when additional category changes
@@ -114,12 +157,6 @@ function Calculator() {
   useEffect(() => {
     setSelectedAdditionalItem(null);
   }, [selectedAdditionalType]);
-
-  // Reset city when province changes
-  useEffect(() => {
-    setSelectedCity("");
-    setShippingCost(0);
-  }, [selectedProvince]);
 
   // Product line dropdown options
   const productLines = Object.keys(ProNoteData).concat(
@@ -143,7 +180,6 @@ function Calculator() {
         return BPSC5Data.BPSC5.Models || [];
       case "BPSC6":
         return BPSC6Data.BPSC6.Models || [];
-
       case "CompassAssetManager":
         // Assuming Compass models are in Subscriptions
         return CompassData.CompassAssetManager.Subscriptions || [];
@@ -157,18 +193,19 @@ function Calculator() {
     switch (selectedProductLine) {
       case "ProNote":
         return ["Hardware Options"];
-    
       case "BPSC1":
-        return ["Hardware Options", "Currency Adaptation", "Software Options", "Service"];
-
+        return [
+          "Hardware Options",
+          "Currency Adaptation",
+          "Software Options",
+          "Service",
+        ];
       case "BPSC2":
         return ["Hardware Options", "Currency Adaptation", "Software Options"];
       case "BPSC5":
         return ["Hardware Options", "Service", "Software Options"];
-     
       case "BPSC6":
         return ["Hardware Options", "Service", "Software Options"];
-     
       case "CompassAssetManager":
         return ["-"];
       default:
@@ -186,22 +223,18 @@ function Calculator() {
       case "ProNote":
         data = ProNoteData.ProNote;
         break;
-
       case "BPSC1":
         data = BPSC1Data.BPSC1;
         break;
-
-        case "BPSC2":
-          data = BPSC2Data.BPSC2;
-          break;
-        case "BPSC5":
-          data = BPSC5Data.BPSC5;
-          break;
-        case "BPSC6":
-          data = BPSC6Data.BPSC6;
-          break;
-
-
+      case "BPSC2":
+        data = BPSC2Data.BPSC2;
+        break;
+      case "BPSC5":
+        data = BPSC5Data.BPSC5;
+        break;
+      case "BPSC6":
+        data = BPSC6Data.BPSC6;
+        break;
       case "CompassAssetManager":
         data = CompassData.CompassAssetManager;
         break;
@@ -273,13 +306,33 @@ function Calculator() {
       );
 
       if (!isModelAlreadyAdded) {
+        let finalPrice = selectedModel.price;
+        let finalPriceNote = "";
+
+        // If price is 0 and manual price is provided, use manual price
+        if (selectedModel.price === 0) {
+          if (manualPrice > 0) {
+            finalPrice = Number(manualPrice);
+            finalPriceNote = "Custom Price";
+          } else {
+            finalPriceNote = priceNote || "Price on Request";
+          }
+        }
+
         setItems([
           ...items,
           {
             ...selectedModel,
-            price: selectedModel.price,
+            price: finalPrice,
+            originalPrice: selectedModel.price, // Keep track of original price
+            priceNote: finalPriceNote,
           },
         ]);
+
+        // Reset manual price after adding
+        setManualPrice(0);
+        setShowManualPriceInput(false);
+        setPriceNote("");
       } else {
         alert("Model ini sudah ditambahkan sebelumnya.");
       }
@@ -295,13 +348,33 @@ function Calculator() {
       );
 
       if (!isItemAlreadyAdded) {
+        let finalPrice = selectedAdditionalItem.price;
+        let finalPriceNote = "";
+
+        // If price is 0 and manual price is provided, use manual price
+        if (selectedAdditionalItem.price === 0) {
+          if (manualPrice > 0) {
+            finalPrice = Number(manualPrice);
+            finalPriceNote = "Price on Catalog/Request";
+          } else {
+            finalPriceNote = priceNote || "Price on Request";
+          }
+        }
+
         setItems([
           ...items,
           {
             ...selectedAdditionalItem,
-            price: selectedAdditionalItem.price,
+            price: finalPrice,
+            originalPrice: selectedAdditionalItem.price, // Keep track of original price
+            priceNote: finalPriceNote,
           },
         ]);
+
+        // Reset manual price after adding
+        setManualPrice(0);
+        setShowManualPriceInput(false);
+        setPriceNote("");
       } else {
         alert("Item ini sudah ditambahkan sebelumnya.");
       }
@@ -322,34 +395,6 @@ function Calculator() {
   const sellingPrice =
     totalHPP / (1 - profitMargin / 100) + Number(shippingCost);
 
-  // Get provinces
-  const provinces = Object.keys(IndonesiaCities);
-
-  // Get cities for selected province
-  const getCitiesForProvince = () => {
-    return selectedProvince ? IndonesiaCities[selectedProvince] : [];
-  };
-
-  // Calculate shipping cost
-  const calculateShippingCost = (city) => {
-    if (!city || !city.region) {
-      return 0;
-    }
-
-    const baseRate = 50000; // Base shipping rate
-    const distanceMultiplier = {
-      Jabodetabek: 1,
-      Jawa: 1.5,
-      "Luar Jawa": 2.5,
-    };
-
-    // Calculate based on region with fallback
-    const region = city.region;
-    const multiplier =
-      distanceMultiplier[region] || distanceMultiplier["Luar Jawa"];
-    return Math.round(baseRate * multiplier);
-  };
-
   // Export to PDF function
   const exportToPDF = () => {
     // Create new PDF document
@@ -368,7 +413,9 @@ function Calculator() {
     const tableData = items.map((item) => [
       item.name,
       item.description || "-",
-      `Rp ${Number(item.price).toLocaleString("id-ID")}`,
+      item.originalPrice === 0 && item.priceNote
+        ? `${item.priceNote} (Rp ${Number(item.price).toLocaleString("id-ID")})`
+        : `Rp ${Number(item.price).toLocaleString("id-ID")}`,
     ]);
 
     // Add product table
@@ -455,16 +502,13 @@ function Calculator() {
     currentY += lineSpacing * 2;
 
     // Add shipping information if available
-    if (selectedProvince && selectedCity) {
+    if (fullAddress) {
       doc.setFontSize(12);
       doc.text("Informasi Pengiriman:", 14, currentY);
       currentY += lineSpacing;
 
       doc.setFontSize(10);
-      doc.text(`Provinsi: ${selectedProvince}`, 14, currentY);
-      currentY += lineSpacing;
-
-      doc.text(`Kota: ${selectedCity}`, 14, currentY);
+      doc.text(`Alamat Lengkap: ${fullAddress}`, 14, currentY);
     }
 
     // Save the PDF
@@ -478,6 +522,7 @@ function Calculator() {
       Nama: item.name,
       Deskripsi: item.description || "-",
       "Harga (Rp)": Number(item.price),
+      Catatan: item.priceNote || "-",
     }));
 
     // Prepare summary data
@@ -494,6 +539,15 @@ function Calculator() {
       { "Ringkasan Biaya": "Harga Jual", Nilai: sellingPrice },
     ];
 
+    // Prepare shipping info data
+    const shippingData = [];
+    if (fullAddress) {
+      shippingData.push({
+        "Info Pengiriman": "Alamat Lengkap",
+        Detail: fullAddress,
+      });
+    }
+
     // Create a workbook with multiple sheets
     const wb = XLSX.utils.book_new();
 
@@ -504,6 +558,12 @@ function Calculator() {
     // Add summary sheet
     const wsSummary = XLSX.utils.json_to_sheet(summaryData);
     XLSX.utils.book_append_sheet(wb, wsSummary, "Ringkasan Biaya");
+
+    // Add shipping info sheet if there's data
+    if (shippingData.length > 0) {
+      const wsShipping = XLSX.utils.json_to_sheet(shippingData);
+      XLSX.utils.book_append_sheet(wb, wsShipping, "Info Pengiriman");
+    }
 
     // Save the Excel file
     XLSX.writeFile(wb, "konfigurasi-produk.xlsx");
@@ -563,7 +623,7 @@ function Calculator() {
             <div className="configurator-grid">
               {/* Product Line Dropdown */}
               <div className="input-group">
-                <label>Machine</label>
+                <label>System Configurator</label>
                 <select
                   value={selectedProductLine}
                   onChange={(e) => setSelectedProductLine(e.target.value)}
@@ -593,11 +653,32 @@ function Calculator() {
                   <option value="">Choose Model</option>
                   {getModelsForProductLine().map((model) => (
                     <option key={model.id} value={model.id}>
-                      {model.name} - Rp {model.price.toLocaleString()}
+                      {model.name} -{" "}
+                      {model.price === 0
+                        ? "Price on Catalog/Request"
+                        : `Rp ${model.price.toLocaleString()}`}
                     </option>
                   ))}
                 </select>
               </div>
+
+              {/* Manual Price Input for zero-price items */}
+              {showManualPriceInput && (
+                <div className="input-group">
+                  <label>Manual Price Input (Rp):</label>
+                  <input
+                    type="number"
+                    value={manualPrice}
+                    onChange={(e) => setManualPrice(Number(e.target.value))}
+                    placeholder="Enter custom price"
+                  />
+                  <small className="price-note">
+                    {priceNote
+                      ? `Item has ${priceNote.toLowerCase()}. Enter custom price if known.`
+                      : ""}
+                  </small>
+                </div>
+              )}
 
               {/* Additional Category Dropdown */}
               <div className="input-group">
@@ -618,7 +699,7 @@ function Calculator() {
                 </select>
               </div>
 
-              {/* Additional Type Dropdown - NEW DROPDOWN */}
+              {/* Additional Type Dropdown */}
               <div className="input-group">
                 <label>Additional Type</label>
                 <select
@@ -635,7 +716,7 @@ function Calculator() {
                 </select>
               </div>
 
-              {/* Additional Item Dropdown - Now dependent on Type */}
+              {/* Additional Item Dropdown */}
               <div className="input-group">
                 <label>Additional Item</label>
                 <select
@@ -653,7 +734,10 @@ function Calculator() {
                   <option value="">Choose Item</option>
                   {getAdditionalItemsForType().map((item) => (
                     <option key={item.id} value={item.id}>
-                      {item.name} - Rp {item.price.toLocaleString()}
+                      {item.name} -{" "}
+                      {item.price === 0
+                        ? "Price on Catalog/Request"
+                        : `Rp ${item.price.toLocaleString()}`}
                     </option>
                   ))}
                 </select>
@@ -664,7 +748,7 @@ function Calculator() {
             {selectedModel && (
               <div className="input-group">
                 <button onClick={addModel} className="add-button">
-                  Add Machine Model
+                  Add System Model
                 </button>
               </div>
             )}
@@ -696,7 +780,7 @@ function Calculator() {
 
           {/* Cost & Shipping Section */}
           <div className="cost-column">
-            <h3>Additional Costs</h3>
+            <h3>Other Costs</h3>
             <div className="configurator-grid">
               {/* Cost Inputs */}
               <div className="input-group">
@@ -718,53 +802,32 @@ function Calculator() {
                   placeholder="Enter rental cost"
                 />
               </div>
+            </div>
 
-              {/* Shipping Province Dropdown */}
+            {/* Shipping Section - Simplified to just manual input */}
+            <h3>Delivery Information</h3>
+            <div className="configurator-grid">
+              {/* Manual Shipping Cost Input */}
               <div className="input-group">
-                <label>Select Province</label>
-                <select
-                  value={selectedProvince}
-                  onChange={(e) => setSelectedProvince(e.target.value)}
-                >
-                  <option value="">Select Province</option>
-                  {provinces.map((province) => (
-                    <option key={province} value={province}>
-                      {province}
-                    </option>
-                  ))}
-                </select>
+                <label>Delivery Cost (Rp):</label>
+                <input
+                  type="number"
+                  value={shippingCost}
+                  onChange={(e) => setShippingCost(Number(e.target.value))}
+                  placeholder="Enter shipping cost"
+                />
               </div>
 
-              {/* Shipping City Dropdown */}
-              <div className="input-group">
-                <label>Select City</label>
-                <select
-                  value={selectedCity}
-                  onChange={(e) => {
-                    const selectedCityName = e.target.value;
-                    setSelectedCity(selectedCityName);
-
-                    // Calculate and set shipping cost when city is selected
-                    if (selectedCityName) {
-                      const cityObj =
-                        getCitiesForProvince().find(
-                          (c) => c.name === selectedCityName
-                        ) || {};
-                      const cost = calculateShippingCost(cityObj);
-                      setShippingCost(cost);
-                    } else {
-                      setShippingCost(0);
-                    }
-                  }}
-                  disabled={!selectedProvince}
-                >
-                  <option value="">Select City</option>
-                  {getCitiesForProvince().map((city) => (
-                    <option key={city.name} value={city.name}>
-                      {city.name}
-                    </option>
-                  ))}
-                </select>
+              {/* Full Address Textarea */}
+              <div className="input-group full-width">
+                <label>Full Address:</label>
+                <textarea
+                  value={fullAddress}
+                  onChange={(e) => setFullAddress(e.target.value)}
+                  placeholder="Enter complete shipping address"
+                  rows={4}
+                  className="full-address-textarea"
+                />
               </div>
             </div>
           </div>
@@ -787,13 +850,22 @@ function Calculator() {
                     <tr key={index}>
                       <td>{item.name}</td>
                       <td>{item.description || "-"}</td>
-                      <td>Rp {Number(item.price).toLocaleString()}</td>
+                      <td>
+                        {item.originalPrice === 0 ? (
+                          <span>
+                            {item.priceNote} (
+                            {Number(item.price).toLocaleString()})
+                          </span>
+                        ) : (
+                          <span>Rp {Number(item.price).toLocaleString()}</span>
+                        )}
+                      </td>
                       <td>
                         <button
                           onClick={() => removeItem(index)}
                           className="remove-button"
                         >
-                          Remove
+                          ✖
                         </button>
                       </td>
                     </tr>
@@ -816,76 +888,106 @@ function Calculator() {
               />
             </div>
           </div>
+          {/* Cost Summary Section - Card-based design with improved selling price width */}
+          <div className="cost-summary-section">
+            <h3>Cost Summary</h3>
+            <div className="cost-cards-container">
+              <div className="cost-card">
+                <div className="cost-card-icon">💰</div>
+                <div className="cost-card-content">
+                  <div className="cost-card-label">Material Cost</div>
+                  <div className="cost-card-value">
+                    Rp {totalMaterialCost.toLocaleString()}
+                  </div>
+                </div>
+              </div>
 
-          {/* Cost Summary Section - Added after profit margin */}
-         {/* Cost Summary Section - Enhanced styling */}
-<div className="cost-summary-section">
-  <h3>Cost Summary</h3>
-  <div className="cost-summary-container">
-    <div className="cost-summary-grid">
-      <div className="summary-item">
-        <div className="summary-label">Total Material Cost:</div>
-        <div className="summary-value">Rp {totalMaterialCost.toLocaleString()}</div>
-      </div>
-      <div className="summary-item">
-        <div className="summary-label">Labor Cost:</div>
-        <div className="summary-value">Rp {Number(laborCost).toLocaleString()}</div>
-      </div>
-      <div className="summary-item">
-        <div className="summary-label">Rental Cost:</div>
-        <div className="summary-value">Rp {Number(rentCost).toLocaleString()}</div>
-      </div>
-      <div className="summary-item highlight">
-        <div className="summary-label">COGS (HPP):</div>
-        <div className="summary-value">Rp {totalHPP.toLocaleString()}</div>
-      </div>
-      <div className="summary-item">
-        <div className="summary-label">Shipping Cost:</div>
-        <div className="summary-value">Rp {shippingCost.toLocaleString()}</div>
-      </div>
-    </div>
+              <div className="cost-card">
+                <div className="cost-card-icon">👷</div>
+                <div className="cost-card-content">
+                  <div className="cost-card-label">Labor Cost</div>
+                  <div className="cost-card-value">
+                    Rp {Number(laborCost).toLocaleString()}
+                  </div>
+                </div>
+              </div>
 
-    {/* Export Buttons - Moved below cost summary */}
-    {items.length > 0 && (
-            <div className="export-buttons">
-              <button
-                onClick={exportToPDF}
-                className="export-button pdf-button"
-              >
-                <span className="button-icon">📄</span> Export to PDF
-              </button>
-              <button
-                onClick={exportToExcel}
-                className="export-button excel-button"
-              >
-                <span className="button-icon">📊</span> Export to Excel
-              </button>
+              <div className="cost-card">
+                <div className="cost-card-icon">🏢</div>
+                <div className="cost-card-content">
+                  <div className="cost-card-label">Rental Cost</div>
+                  <div className="cost-card-value">
+                    Rp {Number(rentCost).toLocaleString()}
+                  </div>
+                </div>
+              </div>
+
+              <div className="cost-card">
+                <div className="cost-card-icon">📊</div>
+                <div className="cost-card-content">
+                  <div className="cost-card-label">HPP</div>
+                  <div className="cost-card-value">
+                    Rp {totalHPP.toLocaleString()}
+                  </div>
+                </div>
+              </div>
+
+              <div className="cost-card">
+                <div className="cost-card-icon">📈</div>
+                <div className="cost-card-content">
+                  <div className="cost-card-label">Profit Margin</div>
+                  <div className="cost-card-value">{profitMargin}%</div>
+                </div>
+              </div>
+
+              <div className="cost-card">
+                <div className="cost-card-icon">🚚</div>
+                <div className="cost-card-content">
+                  <div className="cost-card-label">Delivery Cost</div>
+                  <div className="cost-card-value">
+                    Rp {Number(shippingCost).toLocaleString()}
+                  </div>
+                </div>
+              </div>
             </div>
-          )}
 
-  </div>
-</div>
-
-          
-          {/* Main content padding to ensure content isn't hidden behind the sticky footer */}
-          <div style={{ paddingBottom: "120px" }}>
-            <button className="logout-button" onClick={handleLogout}>
-              Logout
-            </button>
+            {/* Selling Price - Sticky Bottom Section */}
           </div>
         </div>
-      </div>
 
-      {/* Sticky Results Section that only shows selling price */}
-      <div id="stickyResults" className="sticky-results">
-        <div className="results-grid">
-          <div className="result-item result-highlight">
-            <div className="result-label">Selling Price:</div>
-            <div className="result-value">
-              Rp {sellingPrice.toLocaleString()}
+        {/* Remove the previous cost summary section selling price part */}
+        {/* Add this component at the end of your return statement, just before the closing </div> of the container */}
+
+        {/* Selling Price - Sticky Bottom Section */}
+        <div className="sticky-selling-price-container">
+          <div className="sticky-selling-price">
+            <div className="selling-price-wrapper">
+              <div className="selling-price-content">
+                <div className="selling-price-label">Selling Price</div>
+                <div className="selling-price-value">
+                  Rp {sellingPrice.toLocaleString()}
+                </div>
+              </div>
+              <div className="export-buttons">
+                <button
+                  onClick={exportToPDF}
+                  className="export-button pdf-button"
+                >
+                  Export to PDF
+                </button>
+                <button
+                  onClick={exportToExcel}
+                  className="export-button excel-button"
+                >
+                  Export to Excel
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        <button onClick={handleLogout} className="logout-button">
+          Logout
+        </button>
       </div>
     </div>
   );
